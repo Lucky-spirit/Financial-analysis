@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/all">
+        <file alias="main_icon">files/emblem_money.png</file>
+    </qresource>
+</RCC>

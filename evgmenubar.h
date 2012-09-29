@@ -12,13 +12,21 @@ public:
     ~EvgMenuBar();
     
 signals:
-    
+    void calculateAll();
+    void signToQuit();
+
 public slots:
+
+private:
+    void createMenus();
     
 private:
     QMenu *pFileMenu;
     QMenu *pEditMenu;
     QMenu *pHelpMenu;
+
+    QAction *pCalculateAllAction;
+    QAction *pQuitAction;
 };
 
 #endif // EVGMENUBAR_H

@@ -7,17 +7,18 @@ EvgWindow::EvgWindow(QWidget *parent) :
 {
     pItsMenuBar = new EvgMenuBar(this);
     pItsTabBar = new QTabBar(this);
-    pItsIcon = new QIcon();
 
+    this->createTabs();
 
     this->setMenuBar(pItsMenuBar);
-    // this->menuBar();
     this->statusBar();
     this->setCentralWidget(pItsTabBar);
 
     this->setWindowIcon(QIcon(":/all/main_icon"));
 
-    this->show();
+    this->connect(pItsMenuBar, SIGNAL(signToQuit()), this, SLOT(mayToQuit()));
+
+    this->showMaximized();
 }
 
 EvgWindow::~EvgWindow()
@@ -34,16 +35,20 @@ EvgWindow::~EvgWindow()
         pItsTabBar = NULL;
     }
 
-    if (pItsIcon)
-    {
-        delete pItsIcon;
-        pItsIcon = NULL;
-    }
-
+//    if (pInputData)
+//    {
+//        delete pInputData;
+//        pInputData = NULL;
+//    }
     std::cout << "EvgWindow Destructor is called!" << std::endl;
 }
 
 void EvgWindow::mayToQuit()
 {
     delete this;
+}
+
+void EvgWindow::createTabs()
+{
+    pInputData = new InputData(pItsTabBar);
 }

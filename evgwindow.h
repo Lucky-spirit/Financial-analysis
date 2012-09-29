@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTabBar>
 #include "evgmenubar.h"
+#include "inputdata.h"
 
 class EvgWindow : public QMainWindow
 {
@@ -19,11 +20,12 @@ public slots:
 
 private:
     void createMenus();
+    void createTabs();
 
 private:
     EvgMenuBar *pItsMenuBar;
     QTabBar *pItsTabBar;
-    QIcon *pItsIcon;
+    InputData *pInputData;
 };
 
 #endif // EVGWINDOW_H

@@ -11,12 +11,16 @@ INCLUDEPATH += .
 SOURCES += main.cpp \
     evgrow.cpp \
     evgwindow.cpp \
-    evgmenubar.cpp
+    evgmenubar.cpp \
+    evgbasicmodel.cpp \
+    inputdata.cpp
 
 HEADERS += \
     evgrow.h \
     evgwindow.h \
-    evgmenubar.h
+    evgmenubar.h \
+    evgbasicmodel.h \
+    inputdata.h
 
 RESOURCES += \
     evgResources.qrc

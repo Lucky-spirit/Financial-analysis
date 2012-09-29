@@ -5,13 +5,11 @@
 EvgMenuBar::EvgMenuBar(QWidget *parent) :
     QMenuBar(parent)
 {
-    pFileMenu = this->addMenu("File");
-    pEditMenu = this->addMenu("Edit");
-    pHelpMenu = this->addMenu("Help");
+    pFileMenu = this->addMenu(tr("&File"));
+    pEditMenu = this->addMenu(tr("&Edit"));
+    pHelpMenu = this->addMenu(tr("&Help"));
 
-    pFileMenu->addAction("Calculate all");
-
-    this->show();
+    createMenus();
 }
 
 EvgMenuBar::~EvgMenuBar()
@@ -34,4 +32,14 @@ EvgMenuBar::~EvgMenuBar()
         pHelpMenu = NULL;
     }
     std::cout << "EvgMenuBar Destructor is called!" << std::endl;
+}
+
+void EvgMenuBar::createMenus()
+{
+    pCalculateAllAction = pFileMenu->addAction(tr("&Calculate all"));
+    pFileMenu->addSeparator();
+    pQuitAction = pFileMenu->addAction(tr("&Quit"));
+
+    this->connect(pCalculateAllAction, SIGNAL(triggered()), this, SIGNAL(calculateAll()));
+    this->connect(pQuitAction, SIGNAL(triggered()), this, SIGNAL(signToQuit()));
 }

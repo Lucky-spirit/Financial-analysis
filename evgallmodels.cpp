@@ -29,6 +29,7 @@ EvgBasicModel* EvgAllModels::model(modelTypes model) const
 
     default :
         std::cerr << "Error in EvgAllModels.model()!" << std::endl;
+        return NULL;
         break;
     }
 }

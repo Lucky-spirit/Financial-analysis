@@ -9,7 +9,7 @@ class EvgBasicModel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit EvgBasicModel(int coefficientsCount, QWidget *parent = 0);
+    explicit EvgBasicModel(QWidget *parent = 0, int coefficientsCount = 0);
     ~EvgBasicModel();
 
     void setFormulaText(QString text);
@@ -22,9 +22,9 @@ public slots:
     virtual void calculate() = 0;
 
 private:
+    int count;
     QLabel *pLabelFormula;
     QLabel *pLabelResult;
-    int count;
     EvgRow *pCoefficientRows;
 };
 

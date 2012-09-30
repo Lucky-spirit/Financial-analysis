@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QLabel>
 #include <QDoubleSpinBox>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 
 class EvgRow : public QWidget
 {

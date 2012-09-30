@@ -1,7 +1,7 @@
 #include "inputdata.h"
 
 InputData::InputData(QWidget *parent) :
-    EvgBasicModel(8, parent)
+    EvgBasicModel(parent, 8)
 {
 }
 

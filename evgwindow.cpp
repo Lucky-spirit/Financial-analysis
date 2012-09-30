@@ -5,41 +5,19 @@
 EvgWindow::EvgWindow(QWidget *parent) :
     QMainWindow(parent)
 {
-    pItsMenuBar = new EvgMenuBar(this);
-    pItsTabBar = new QTabBar(this);
+    createMenus();
+    createTabs();
+    createAllModels();
 
-    this->createTabs();
-
-    this->setMenuBar(pItsMenuBar);
     this->statusBar();
-    this->setCentralWidget(pItsTabBar);
 
     this->setWindowIcon(QIcon(":/all/main_icon"));
-
-    this->connect(pItsMenuBar, SIGNAL(signToQuit()), this, SLOT(mayToQuit()));
 
     this->showMaximized();
 }
 
 EvgWindow::~EvgWindow()
 {
-    if (pItsMenuBar)
-    {
-        delete pItsMenuBar;
-        pItsMenuBar = NULL;
-    }
-
-    if (pItsTabBar)
-    {
-        delete pItsTabBar;
-        pItsTabBar = NULL;
-    }
-
-//    if (pInputData)
-//    {
-//        delete pInputData;
-//        pInputData = NULL;
-//    }
     std::cout << "EvgWindow Destructor is called!" << std::endl;
 }
 
@@ -48,7 +26,23 @@ void EvgWindow::mayToQuit()
     delete this;
 }
 
+void EvgWindow::createMenus()
+{
+    pItsMenuBar = new EvgMenuBar(this);
+    this->setMenuBar(pItsMenuBar);
+
+    connect(pItsMenuBar, SIGNAL(signToQuit()), this, SLOT(mayToQuit()));
+}
+
 void EvgWindow::createTabs()
 {
-    pInputData = new InputData(pItsTabBar);
+    pItsTabWidget = new QTabWidget(this);
+    this->setCentralWidget(pItsTabWidget);
+}
+
+void EvgWindow::createAllModels()
+{
+    pAllModels = new EvgAllModels(this);
+
+    pItsTabWidget->insertTab(modelInput, pAllModels->model(modelInput), tr("Input Data"));
 }

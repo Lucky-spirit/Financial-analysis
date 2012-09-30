@@ -13,14 +13,16 @@ SOURCES += main.cpp \
     evgwindow.cpp \
     evgmenubar.cpp \
     evgbasicmodel.cpp \
-    inputdata.cpp
+    inputdata.cpp \
+    evgallmodels.cpp
 
 HEADERS += \
     evgrow.h \
     evgwindow.h \
     evgmenubar.h \
     evgbasicmodel.h \
-    inputdata.h
+    inputdata.h \
+    evgallmodels.h
 
 RESOURCES += \
     evgResources.qrc

@@ -1,25 +1,19 @@
 #include "evgbasicmodel.h"
 
-EvgBasicModel::EvgBasicModel(QWidget *parent) :
+EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent) :
+    count(coefficientsCount),
     QWidget(parent)
 {
-    pLabelFormula = new QLabel(tr(""), this);
-    pLabelResult = new QLabel(tr(""), this);
+    pLabelFormula = new QLabel(tr("Formula"), this);
+    pLabelResult = new QLabel(tr("Result"), this);
+    pCoefficientRows = new EvgRow[count];
+
+    this->show();
 }
 
 EvgBasicModel::~EvgBasicModel()
 {
-//    if (pLabelFormula)
-//    {
-//        delete pLabelFormula;
-//        pLabelFormula = NULL;
-//    }
-
-//    if (pLabelResult)
-//    {
-//        delete pLabelResult;
-//        pLabelResult = NULL;
-//    }
+    delete [] pCoefficientRows;
 }
 
 void EvgBasicModel::setFormulaText(QString text)

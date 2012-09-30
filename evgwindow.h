@@ -2,9 +2,10 @@
 #define EVGWINDOW_H
 
 #include <QMainWindow>
-#include <QTabBar>
+#include <QTabWidget>
 #include "evgmenubar.h"
-#include "inputdata.h"
+#include "evgallmodels.h"
+// #include "inputdata.h"
 
 class EvgWindow : public QMainWindow
 {
@@ -21,11 +22,13 @@ public slots:
 private:
     void createMenus();
     void createTabs();
+    void createAllModels();
 
 private:
     EvgMenuBar *pItsMenuBar;
-    QTabBar *pItsTabBar;
-    InputData *pInputData;
+    QTabWidget *pItsTabWidget;
+    EvgAllModels *pAllModels;
+    // InputData *pInputData;
 };
 
 #endif // EVGWINDOW_H

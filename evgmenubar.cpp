@@ -36,9 +36,9 @@ EvgMenuBar::~EvgMenuBar()
 
 void EvgMenuBar::createMenus()
 {
-    pCalculateAllAction = pFileMenu->addAction(tr("&Calculate all"));
+    pCalculateAllAction = pFileMenu->addAction(QIcon(":/all/calculator"), tr("&Calculate all"));
     pFileMenu->addSeparator();
-    pQuitAction = pFileMenu->addAction(tr("&Quit"));
+    pQuitAction = pFileMenu->addAction(QIcon(":/all/quit"), tr("&Quit"));
 
     this->connect(pCalculateAllAction, SIGNAL(triggered()), this, SIGNAL(calculateAll()));
     this->connect(pQuitAction, SIGNAL(triggered()), this, SIGNAL(signToQuit()));

@@ -1,5 +1,6 @@
 #include "evgrow.h"
 
+// Supporting comment
 #include <iostream>
 
 EvgRow::EvgRow(QWidget *parent) :
@@ -27,5 +28,7 @@ EvgRow::~EvgRow()
         delete pDefinitionCoefficient;
         pDefinitionCoefficient = NULL;
     }
+
+    // Supporting comment
     std::cout << "evgRow Destructor is called!" << std::endl;
 }

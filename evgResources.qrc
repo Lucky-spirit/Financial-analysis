@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/all">
         <file alias="main_icon">files/emblem_money.png</file>
+        <file alias="quit">files/application_exit.png</file>
+        <file alias="calculator">files/calculator.png</file>
     </qresource>
 </RCC>

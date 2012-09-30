@@ -3,12 +3,13 @@
 
 #include <QWidget>
 #include <QLabel>
+#include "evgrow.h"
 
 class EvgBasicModel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit EvgBasicModel(QWidget *parent = 0);
+    explicit EvgBasicModel(int coefficientsCount, QWidget *parent = 0);
     ~EvgBasicModel();
 
     void setFormulaText(QString text);
@@ -23,6 +24,8 @@ public slots:
 private:
     QLabel *pLabelFormula;
     QLabel *pLabelResult;
+    int count;
+    EvgRow *pCoefficientRows;
 };
 
 #endif // EVGBASICMODEL_H

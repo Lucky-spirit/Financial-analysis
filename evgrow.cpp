@@ -6,16 +6,18 @@
 EvgRow::EvgRow(QWidget *parent) :
     QWidget(parent)
 {
-    pIdCoefficient = new QLabel(this);
+    pIdCoefficient = new QLabel("x1", this);
     pCoefficientValue = new QDoubleSpinBox(this);
-    pDefinitionCoefficient = new QLabel(this);
+    pDefinitionCoefficient = new QLabel("Some definition", this);
 
-    QHBoxLayout layoutHor;
-    layoutHor.addWidget(pIdCoefficient);
-    layoutHor.addWidget(pCoefficientValue);
-    layoutHor.addWidget(pDefinitionCoefficient);
+    QHBoxLayout *layoutHor = new QHBoxLayout;
+    layoutHor->addStretch(1);
+    layoutHor->addWidget(pIdCoefficient);
+    layoutHor->addWidget(pCoefficientValue);
+    layoutHor->addWidget(pDefinitionCoefficient, 2);
+    layoutHor->addStretch(1);
 
-    this->setLayout(&layoutHor);
+    this->setLayout(layoutHor);
 
     this->show();
 }

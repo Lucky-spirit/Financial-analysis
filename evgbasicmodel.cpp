@@ -8,14 +8,19 @@ EvgBasicModel::EvgBasicModel(QWidget *parent, int coefficientsCount) :
     pLabelResult = new QLabel(tr("Result"), this);
     pCoefficientRows = new EvgRow[count];
 
-    QVBoxLayout layoutVertical;
+    QHBoxLayout *layoutHor = new QHBoxLayout;
+    layoutHor->addStretch(1);
+    layoutHor->addWidget(pLabelFormula, 0);
+    layoutHor->addWidget(pLabelResult, 0);
+    layoutHor->addStretch(1);
 
-    layoutVertical.addWidget(pLabelFormula);
-    layoutVertical.addWidget(pLabelResult);
+    QVBoxLayout *layoutVertical = new QVBoxLayout;
+    layoutVertical->addLayout(layoutHor, 0);
+    layoutVertical->addStretch(1);
     for (int i = 0; i < count; i++)
-        layoutVertical.addWidget(&(pCoefficientRows[i]));
+        layoutVertical->addWidget(&(pCoefficientRows[i]), 0);
 
-    this->setLayout(&layoutVertical);
+    this->setLayout(layoutVertical);
 
     this->show();
 }

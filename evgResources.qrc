@@ -4,4 +4,7 @@
         <file alias="quit">files/application_exit.png</file>
         <file alias="calculator">files/calculator.png</file>
     </qresource>
+    <qresource prefix="/models">
+        <file alias="index">files/models/index.html</file>
+    </qresource>
 </RCC>

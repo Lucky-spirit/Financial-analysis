@@ -3,7 +3,9 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QTextBrowser>
 #include "evgrow.h"
+#include "evgtextbrowser.h"
 
 class EvgBasicModel : public QWidget
 {
@@ -26,6 +28,7 @@ private:
     QLabel *pLabelFormula;
     QLabel *pLabelResult;
     EvgRow *pCoefficientRows;
+    evgTextBrowser *pTextDefinitionModel;
 };
 
 #endif // EVGBASICMODEL_H

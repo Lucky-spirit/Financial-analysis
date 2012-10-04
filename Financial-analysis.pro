@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     evgmenubar.cpp \
     evgbasicmodel.cpp \
     inputdata.cpp \
-    evgallmodels.cpp
+    evgallmodels.cpp \
+    evgtextbrowser.cpp
 
 HEADERS += \
     evgrow.h \
@@ -22,7 +23,8 @@ HEADERS += \
     evgmenubar.h \
     evgbasicmodel.h \
     inputdata.h \
-    evgallmodels.h
+    evgallmodels.h \
+    evgtextbrowser.h
 
 RESOURCES += \
     evgResources.qrc

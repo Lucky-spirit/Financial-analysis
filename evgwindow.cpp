@@ -12,8 +12,6 @@ EvgWindow::EvgWindow(QWidget *parent) :
     this->statusBar();
 
     this->setWindowIcon(QIcon(":/all/main_icon"));
-
-    this->showMaximized();
 }
 
 EvgWindow::~EvgWindow()

@@ -10,5 +10,7 @@ int main(int argc, char **argv)
 
     QObject::connect(&app, SIGNAL(aboutToQuit()), pItsWindow, SLOT(mayToQuit()));
 
+    pItsWindow->showMaximized();
+
     return app.exec();
 }

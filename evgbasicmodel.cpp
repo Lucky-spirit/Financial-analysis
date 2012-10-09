@@ -8,7 +8,7 @@ EvgBasicModel::EvgBasicModel(QWidget *parent, int coefficientsCount) :
     pLabelResult = new QLabel(tr("Result"), this);
     pCoefficientRows = new EvgRow[count];
     pTextDefinitionModel = new evgTextBrowser(0);
-    pTextDefinitionModel->setSource(QUrl("qrc:/models/index"));
+    // pTextDefinitionModel->setSource(QUrl("qrc:/models/index"));
     // pTextDefinitionModel->adjustSize();
     // pTextDefinitionModel->setFrameStyle(QFrame::Panel | QFrame::Plain);
     // pTextDefinitionModel->setLineWidth(1);
@@ -32,8 +32,6 @@ EvgBasicModel::EvgBasicModel(QWidget *parent, int coefficientsCount) :
     layoutVertical->addLayout(pLayoutHorBottom, 0);
 
     this->setLayout(layoutVertical);
-
-    this->show();
 }
 
 EvgBasicModel::~EvgBasicModel()

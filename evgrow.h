@@ -19,6 +19,9 @@ signals:
 public slots:
     
 private:
+    void createSpinBox();
+
+private:
     QLabel *pIdCoefficient;
     QDoubleSpinBox *pCoefficientValue;
     QLabel *pDefinitionCoefficient;

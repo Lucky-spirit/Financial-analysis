@@ -15,7 +15,8 @@ SOURCES += main.cpp \
     evgbasicmodel.cpp \
     inputdata.cpp \
     evgallmodels.cpp \
-    evgtextbrowser.cpp
+    evgtextbrowser.cpp \
+    modaltmana.cpp
 
 HEADERS += \
     evgrow.h \
@@ -24,7 +25,8 @@ HEADERS += \
     evgbasicmodel.h \
     inputdata.h \
     evgallmodels.h \
-    evgtextbrowser.h
+    evgtextbrowser.h \
+    modaltmana.h
 
 RESOURCES += \
     evgResources.qrc

@@ -7,6 +7,7 @@ EvgAllModels::EvgAllModels(QObject *parent) :
     QObject(parent)
 {
     pInputModel = new InputData;
+    pModAltmana = new modAltmana;
 }
 
 EvgAllModels::~EvgAllModels()
@@ -19,12 +20,12 @@ EvgBasicModel* EvgAllModels::model(modelTypes model) const
 {
     switch (model)
     {
-    case modelInput :
+    case TypeModelInput :
         return pInputModel;
         break;
 
-    case modelAltman :
-        return NULL;
+    case TypeModelAltman :
+        return pModAltmana;
         break;
 
     default :

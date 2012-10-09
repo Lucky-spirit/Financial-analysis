@@ -10,6 +10,8 @@ public:
     explicit evgTextBrowser(QWidget *parent = 0);
 
     QSize sizeHint() const;
+    QSize minimumSizeHint() const;
+
 
 signals:
     

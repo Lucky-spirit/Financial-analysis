@@ -3,10 +3,11 @@
 
 #include <QObject>
 #include "inputdata.h"
+#include "modaltmana.h"
 
 enum modelTypes {
-    modelInput,
-    modelAltman
+    TypeModelInput,
+    TypeModelAltman
 };
 
 class EvgAllModels : public QObject
@@ -26,6 +27,7 @@ public slots:
 private:
     int count;
     InputData *pInputModel;
+    modAltmana *pModAltmana;
 };
 
 #endif // EVGALLMODELS_H

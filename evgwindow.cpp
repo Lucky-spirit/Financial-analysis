@@ -42,5 +42,6 @@ void EvgWindow::createAllModels()
 {
     pAllModels = new EvgAllModels(this);
 
-    pItsTabWidget->insertTab(modelInput, pAllModels->model(modelInput), tr("Input Data"));
+    pItsTabWidget->insertTab(TypeModelInput, pAllModels->model(TypeModelInput), tr("Input Data"));
+    pItsTabWidget->insertTab(TypeModelAltman, pAllModels->model(TypeModelAltman), tr("Altman's model"));
 }

@@ -7,11 +7,19 @@ evgTextBrowser::evgTextBrowser(QWidget *parent) :
 
 QSize evgTextBrowser::sizeHint() const
 {
-    QMargins m(contentsMargins());
-    return document()->size().toSize() + QSize(m.left() + m.right(), m.top() + m.bottom());
+    if (document()->isEmpty())
+        return QSize(0, 0);
+    else
+    {
+        QMargins m(contentsMargins());
+        return document()->size().toSize() + QSize(m.left() + m.right(), m.top() + m.bottom());
+    }
 }
 
 QSize evgTextBrowser::minimumSizeHint() const
 {
-    return QSize(1, 1);
+    if (document()->isEmpty())
+        return QSize(0, 0);
+    else
+        return document()->size().toSize();
 }

@@ -11,9 +11,10 @@ class EvgBasicModel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit EvgBasicModel(QWidget *parent = 0, int coefficientsCount = 0);
+    explicit EvgBasicModel(int coefficientsCount, QWidget *parent = 0, QString source = "");
     ~EvgBasicModel();
 
+    void createRows(int countOfRows);
     void setFormulaText(QString text);
     void setResultValue(float value);
 

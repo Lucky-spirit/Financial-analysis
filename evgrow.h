@@ -14,6 +14,9 @@ public:
     explicit EvgRow(QWidget *parent = 0);
     ~EvgRow();
 
+    void setIdText(int newId);
+    void setDefinitionText(QString newText);
+
 signals:
     
 public slots:

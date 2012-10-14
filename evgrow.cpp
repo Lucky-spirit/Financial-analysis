@@ -6,9 +6,9 @@
 EvgRow::EvgRow(QWidget *parent) :
     QWidget(parent)
 {
-    pIdCoefficient = new QLabel("x1", this);
+    pIdCoefficient = new QLabel("", this);
     createSpinBox();
-    pDefinitionCoefficient = new QLabel("Some definition", this);
+    pDefinitionCoefficient = new QLabel("", this);
 
     QHBoxLayout *layoutHor = new QHBoxLayout;
     layoutHor->addStretch(1);
@@ -42,11 +42,24 @@ EvgRow::~EvgRow()
     std::cout << "evgRow Destructor is called!" << std::endl;
 }
 
+void EvgRow::setIdText(int newId)
+{
+    QString foo;
+    foo.setNum(newId);
+    foo.insert(0, "x");
+    pIdCoefficient->setText(foo);
+}
+
+void EvgRow::setDefinitionText(QString newText)
+{
+    pDefinitionCoefficient->setText(newText);
+}
+
 void EvgRow::createSpinBox()
 {
     pCoefficientValue = new QDoubleSpinBox(this);
 
-    pCoefficientValue->setMaximum(99999);
-    pCoefficientValue->setMinimum(-99999);
+    pCoefficientValue->setMaximum(99999.9999);
+    pCoefficientValue->setMinimum(-99999.9999);
     pCoefficientValue->setDecimals(4);
 }

@@ -11,11 +11,10 @@ class EvgBasicModel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit EvgBasicModel(int coefficientsCount, QWidget *parent = 0, QString source = "");
+    explicit EvgBasicModel(int coefficientsCount, QWidget *parent = 0, QString source = "", QString formulaText = "");
     ~EvgBasicModel();
 
     void createRows(int countOfRows);
-    void setFormulaText(QString text);
     void setResultValue(float value);
 
 signals:
@@ -26,6 +25,7 @@ public slots:
 
 private:
     int count;
+    QString textOfFormula;
     QLabel *pLabelFormula;
     QLabel *pLabelResult;
     EvgRow *pCoefficientRows;

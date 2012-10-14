@@ -1,20 +1,16 @@
 #include "evgbasicmodel.h"
 
-EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString source) :
+EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString source, QString formulaText) :
     QWidget(parent),
-    count(coefficientsCount)
+    count(coefficientsCount),
+    textOfFormula("<h2>" + formulaText + "</h2>")
 {
-    pLabelFormula = new QLabel(tr("Formula"), this);
+    pLabelFormula = new QLabel(textOfFormula, this);
     pLabelResult = new QLabel(tr("Result"), this);
     createRows(count);
 
     pTextDefinitionModel = new evgTextBrowser(0);
-    // pTextDefinitionModel->setSource(QUrl("qrc:/models/index"));
     pTextDefinitionModel->setSource(QUrl(source));
-    // pTextDefinitionModel->adjustSize();
-    // pTextDefinitionModel->setFrameStyle(QFrame::Panel | QFrame::Plain);
-    // pTextDefinitionModel->setLineWidth(1);
-    // pTextDefinitionModel->setStyleSheet("background-color: white;");
 
     QHBoxLayout *layoutHor = new QHBoxLayout;
     layoutHor->addStretch(1);
@@ -47,11 +43,6 @@ void EvgBasicModel::createRows(int countOfRows)
 
     for (int i = 0; i < countOfRows; i++)
         pCoefficientRows[i].setIdText(i + 1);
-}
-
-void EvgBasicModel::setFormulaText(QString text)
-{
-    pLabelFormula->setText(text);
 }
 
 void EvgBasicModel::setResultValue(float value)

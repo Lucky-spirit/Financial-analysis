@@ -17,13 +17,17 @@ public:
     void createRows(int countOfRows);
     void setResultValue(float value);
 
+    virtual QHBoxLayout *createTopLayout();
+    virtual QHBoxLayout *createBottomLayout();
+    virtual QVBoxLayout* createMainLayout();
+
 signals:
     void sendCalculateToOthers();
 
 public slots:
     virtual void calculate() = 0;
 
-private:
+protected:
     int count;
     QString textOfFormula;
     QLabel *pLabelFormula;

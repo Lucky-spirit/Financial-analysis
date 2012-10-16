@@ -15,7 +15,7 @@ public:
     ~EvgWindow();
     
 signals:
-    
+
 public slots:
     void mayToQuit();
 

@@ -20,7 +20,7 @@ public:
     EvgBasicModel* model(modelTypes model) const;
     
 signals:
-    
+
 public slots:
     void calculateAllModels();
 

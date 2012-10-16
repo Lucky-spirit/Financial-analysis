@@ -9,8 +9,8 @@ class evgTextBrowser : public QTextBrowser
 public:
     explicit evgTextBrowser(QWidget *parent = 0);
 
-    QSize sizeHint() const;
-    QSize minimumSizeHint() const;
+//    QSize sizeHint() const;
+//    QSize minimumSizeHint() const;
 
 
 signals:

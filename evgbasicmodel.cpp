@@ -12,24 +12,7 @@ EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString sou
     pTextDefinitionModel = new evgTextBrowser(0);
     pTextDefinitionModel->setSource(QUrl(source));
 
-    QHBoxLayout *layoutHor = new QHBoxLayout;
-    layoutHor->addStretch(1);
-    layoutHor->addWidget(pLabelFormula, 0);
-    layoutHor->addWidget(pLabelResult, 0);
-    layoutHor->addStretch(1);
-
-    QHBoxLayout *pLayoutHorBottom = new QHBoxLayout;
-    pLayoutHorBottom->addWidget(pTextDefinitionModel, 1);
-
-    QVBoxLayout *layoutVertical = new QVBoxLayout;
-    layoutVertical->addLayout(layoutHor, 0);
-    layoutVertical->addStretch(1);
-    for (int i = 0; i < count; i++)
-        layoutVertical->addWidget(&(pCoefficientRows[i]), 0);
-    layoutVertical->addStretch(1);
-    layoutVertical->addLayout(pLayoutHorBottom, 0);
-
-    this->setLayout(layoutVertical);
+    this->setLayout(createMainLayout());
 }
 
 EvgBasicModel::~EvgBasicModel()
@@ -49,4 +32,36 @@ void EvgBasicModel::setResultValue(float value)
 {
     QString result;
     pLabelResult->setText(result.setNum(value, 'g', 4));
+}
+
+QHBoxLayout* EvgBasicModel::createTopLayout()
+{
+    QHBoxLayout *layoutHor = new QHBoxLayout;
+    layoutHor->addStretch(1);
+    layoutHor->addWidget(pLabelFormula, 0);
+    layoutHor->addWidget(pLabelResult, 0);
+    layoutHor->addStretch(1);
+    return layoutHor;
+}
+
+QHBoxLayout* EvgBasicModel::createBottomLayout()
+{
+    QHBoxLayout *pLayoutHorBottom = new QHBoxLayout;
+    pLayoutHorBottom->addWidget(pTextDefinitionModel, 1);
+    return pLayoutHorBottom;
+}
+
+QVBoxLayout *EvgBasicModel::createMainLayout()
+{
+    QHBoxLayout *layoutHor = createTopLayout();
+    QHBoxLayout *pLayoutHorBottom = createBottomLayout();
+
+    QVBoxLayout *layoutVertical = new QVBoxLayout;
+    layoutVertical->addLayout(layoutHor, 0);
+    layoutVertical->addStretch(1);
+    for (int i = 0; i < count; i++)
+        layoutVertical->addWidget(&(pCoefficientRows[i]), 0);
+    layoutVertical->addStretch(1);
+    layoutVertical->addLayout(pLayoutHorBottom, 0);
+    return layoutVertical;
 }

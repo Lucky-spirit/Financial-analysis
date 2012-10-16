@@ -4,9 +4,13 @@
 #include <iostream>
 
 EvgAllModels::EvgAllModels(QObject *parent) :
-    QObject(parent)
+    QObject(parent),
+    count(1)
 {
     pInputModel = new InputData;
+
+    connect(pInputModel, SIGNAL(signalCalculate()), this, SLOT(calculateAllModels()));
+
     pModAltmana = new modAltmana;
 }
 
@@ -37,5 +41,10 @@ EvgBasicModel* EvgAllModels::model(modelTypes model) const
 
 void EvgAllModels::calculateAllModels()
 {
+    qDebug("We have click!");
 
+    EvgBasicModel* pointersArray[] = {pModAltmana};
+
+    for (int i = 0; i < count; i++)
+        pointersArray[i]->calculate();
 }

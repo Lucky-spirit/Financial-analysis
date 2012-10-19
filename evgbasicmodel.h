@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QLabel>
 #include <QTextBrowser>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 #include "evgrow.h"
 #include "evgtextbrowser.h"
 
@@ -17,9 +19,9 @@ public:
     void createRows(int countOfRows);
     void setResultValue(float value);
 
-    virtual QHBoxLayout *createTopLayout();
-    virtual QHBoxLayout *createBottomLayout();
-    virtual QVBoxLayout* createMainLayout();
+    virtual void createTopLayout();
+    virtual void createBottomLayout();
+    virtual void createMainLayout();
 
 signals:
     void sendCalculateToOthers();
@@ -29,11 +31,15 @@ public slots:
 
 protected:
     int count;
+    float result;
     QString textOfFormula;
     QLabel *pLabelFormula;
     QLabel *pLabelResult;
     EvgRow *pCoefficientRows;
     evgTextBrowser *pTextDefinitionModel;
+    QHBoxLayout *topLayout;
+    QHBoxLayout *bottomLayout;
+    QVBoxLayout *mainLayout;
 };
 
 #endif // EVGBASICMODEL_H

@@ -12,6 +12,9 @@ public:
     explicit InputData(QWidget *parent = 0);
 
     void createCalculateButton();
+    void createTopLayout();
+    void createBottomLayout();
+    void createMainLayout();
     
 signals:
     void signalCalculate();

@@ -3,6 +3,7 @@
 EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString source, QString formulaText) :
     QWidget(parent),
     count(coefficientsCount),
+    result(0.0f),
     textOfFormula("<h2>" + formulaText + "</h2>")
 {
     pLabelFormula = new QLabel(textOfFormula, this);
@@ -12,7 +13,9 @@ EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString sou
     pTextDefinitionModel = new evgTextBrowser(0);
     pTextDefinitionModel->setSource(QUrl(source));
 
-    this->setLayout(createMainLayout());
+    this->createTopLayout();
+    this->createBottomLayout();
+    this->createMainLayout();
 }
 
 EvgBasicModel::~EvgBasicModel()
@@ -34,34 +37,29 @@ void EvgBasicModel::setResultValue(float value)
     pLabelResult->setText(result.setNum(value, 'g', 4));
 }
 
-QHBoxLayout* EvgBasicModel::createTopLayout()
+void EvgBasicModel::createTopLayout()
 {
-    QHBoxLayout *layoutHor = new QHBoxLayout;
-    layoutHor->addStretch(1);
-    layoutHor->addWidget(pLabelFormula, 0);
-    layoutHor->addWidget(pLabelResult, 0);
-    layoutHor->addStretch(1);
-    return layoutHor;
+    topLayout = new QHBoxLayout;
+    topLayout->addStretch(1);
+    topLayout->addWidget(pLabelFormula, 0);
+    topLayout->addWidget(pLabelResult, 0);
+    topLayout->addStretch(1);
 }
 
-QHBoxLayout* EvgBasicModel::createBottomLayout()
+void EvgBasicModel::createBottomLayout()
 {
-    QHBoxLayout *pLayoutHorBottom = new QHBoxLayout;
-    pLayoutHorBottom->addWidget(pTextDefinitionModel, 1);
-    return pLayoutHorBottom;
+    bottomLayout = new QHBoxLayout;
+    bottomLayout->addWidget(pTextDefinitionModel, 1);
 }
 
-QVBoxLayout *EvgBasicModel::createMainLayout()
+void EvgBasicModel::createMainLayout()
 {
-    QHBoxLayout *layoutHor = createTopLayout();
-    QHBoxLayout *pLayoutHorBottom = createBottomLayout();
-
-    QVBoxLayout *layoutVertical = new QVBoxLayout;
-    layoutVertical->addLayout(layoutHor, 0);
-    layoutVertical->addStretch(1);
+    mainLayout = new QVBoxLayout;
+    mainLayout->addLayout(topLayout, 0);
+    mainLayout->addStretch(1);
     for (int i = 0; i < count; i++)
-        layoutVertical->addWidget(&(pCoefficientRows[i]), 0);
-    layoutVertical->addStretch(1);
-    layoutVertical->addLayout(pLayoutHorBottom, 0);
-    return layoutVertical;
+        mainLayout->addWidget(&(pCoefficientRows[i]), 0);
+    mainLayout->addStretch(1);
+    mainLayout->addLayout(bottomLayout, 0);
+    this->setLayout(mainLayout);
 }

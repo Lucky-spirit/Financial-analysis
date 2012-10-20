@@ -7,7 +7,7 @@ EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString sou
     textOfFormula("<h2>" + formulaText + "</h2>")
 {
     pLabelFormula = new QLabel(textOfFormula, this);
-    pLabelResult = new QLabel(tr("Result"), this);
+    pLabelResult = new QLabel(tr("<h2> = ?</h2>"), this);
     createRows(count);
 
     pTextDefinitionModel = new evgTextBrowser(0);

@@ -6,5 +6,6 @@
     </qresource>
     <qresource prefix="/models">
         <file alias="index">files/models/index.html</file>
+        <file alias="altman">files/models/altman.html</file>
     </qresource>
 </RCC>

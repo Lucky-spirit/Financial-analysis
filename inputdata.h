@@ -5,6 +5,8 @@
 
 #include <QPushButton>
 
+const int InputCount = 8;
+
 class InputData : public EvgBasicModel
 {
     Q_OBJECT

@@ -3,6 +3,8 @@
 
 #include "evgbasicmodel.h"
 
+const int CountAltmana = 6;
+
 class modAltmana : public EvgBasicModel
 {
     Q_OBJECT

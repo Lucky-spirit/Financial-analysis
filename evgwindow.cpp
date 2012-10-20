@@ -44,6 +44,6 @@ void EvgWindow::createAllModels()
 
     connect(pItsMenuBar, SIGNAL(calculateAll()), pAllModels, SLOT(calculateAllModels()));
 
-    pItsTabWidget->insertTab(TypeModelInput, pAllModels->model(TypeModelInput), tr("Input Data"));
-    pItsTabWidget->insertTab(TypeModelAltman, pAllModels->model(TypeModelAltman), tr("Altman's model"));
+    pItsTabWidget->insertTab(TypeModelInput, pAllModels->model(TypeModelInput), tr("Исходные данные"));
+    pItsTabWidget->insertTab(TypeModelAltman, pAllModels->model(TypeModelAltman), tr("Модель Альтмана"));
 }

@@ -1,7 +1,7 @@
 #include "inputdata.h"
 
 InputData::InputData(QWidget *parent) :
-    EvgBasicModel(8, parent, "", "Please, insert an input data")
+    EvgBasicModel(InputCount, parent, "", tr("Пожалуйста, введите исходные данные:"))
 {
     this->createTopLayout();
     this->createBottomLayout();
@@ -14,7 +14,7 @@ void InputData::calculate()
 
 void InputData::createCalculateButton()
 {
-    btnCalculate = new QPushButton(tr("Calculate all"), this);
+    btnCalculate = new QPushButton(tr("Рассчитать все"), this);
 
     connect(btnCalculate, SIGNAL(clicked()), this, SIGNAL(signalCalculate()));
 }
@@ -38,7 +38,7 @@ void InputData::createTopLayout()
 
 void InputData::createBottomLayout()
 {
-    pTextDefinitionModel->hide();
+    // pTextDefinitionModel->hide();
 
     createCalculateButton();
 
@@ -49,9 +49,9 @@ void InputData::createBottomLayout()
     }
 
     bottomLayout = new QHBoxLayout;
-    bottomLayout->addStretch(1);
-    bottomLayout->addWidget(btnCalculate, 0);
-    bottomLayout->addStretch(1);
+    bottomLayout->addStretch(3);
+    bottomLayout->addWidget(btnCalculate, 2);
+    bottomLayout->addStretch(3);
 }
 
 void InputData::createMainLayout()
@@ -70,5 +70,7 @@ void InputData::createMainLayout()
         mainLayout->addWidget(&(pCoefficientRows[i]), 0);
     mainLayout->addStretch(1);
     mainLayout->addLayout(bottomLayout, 0);
+    mainLayout->addStretch(1);
+    mainLayout->addWidget(pTextDefinitionModel);
     this->setLayout(mainLayout);
 }

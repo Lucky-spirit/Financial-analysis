@@ -63,3 +63,8 @@ void EvgBasicModel::createMainLayout()
     mainLayout->addLayout(bottomLayout, 0);
     this->setLayout(mainLayout);
 }
+
+double EvgBasicModel::getValue(int number) const
+{
+    return pCoefficientRows[number].getValue();
+}

@@ -46,5 +46,5 @@ void EvgAllModels::calculateAllModels()
     EvgBasicModel* pointersArray[] = {pModAltmana};
 
     for (int i = 0; i < count; i++)
-        pointersArray[i]->calculate();
+        pointersArray[i]->calculate(pInputModel);
 }

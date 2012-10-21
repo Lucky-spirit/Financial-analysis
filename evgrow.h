@@ -17,6 +17,8 @@ public:
     void setIdText(int newId);
     void setDefinitionText(QString newText);
 
+    double getValue() const;
+
 signals:
     
 public slots:

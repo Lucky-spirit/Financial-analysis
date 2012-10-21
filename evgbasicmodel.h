@@ -23,11 +23,13 @@ public:
     virtual void createBottomLayout();
     virtual void createMainLayout();
 
+    double getValue(int number) const;
+
 signals:
     void sendCalculateToOthers();
 
 public slots:
-    virtual void calculate() = 0;
+    virtual void calculate(EvgBasicModel *pInputData) = 0;
 
 protected:
     int count;

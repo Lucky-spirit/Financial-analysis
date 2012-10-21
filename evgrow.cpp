@@ -55,6 +55,11 @@ void EvgRow::setDefinitionText(QString newText)
     pDefinitionCoefficient->setText(newText);
 }
 
+double EvgRow::getValue() const
+{
+    return pCoefficientValue->value();
+}
+
 void EvgRow::createSpinBox()
 {
     pCoefficientValue = new QDoubleSpinBox(this);

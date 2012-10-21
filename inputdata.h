@@ -22,7 +22,7 @@ signals:
     void signalCalculate();
 
 public slots:
-    void calculate();
+    void calculate(EvgBasicModel *pInputData);
 
 private:
     QPushButton *btnCalculate;

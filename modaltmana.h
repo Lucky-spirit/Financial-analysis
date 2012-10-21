@@ -14,7 +14,7 @@ public:
 signals:
     
 public slots:
-    void calculate();
+    void calculate(EvgBasicModel *pInputData);
 };
 
 #endif // MODALTMANA_H

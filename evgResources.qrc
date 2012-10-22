@@ -5,7 +5,7 @@
         <file alias="calculator">files/calculator.png</file>
     </qresource>
     <qresource prefix="/models">
-        <file alias="index">files/models/index.html</file>
         <file alias="altman">files/models/altman.html</file>
+        <file alias="input">files/models/input.html</file>
     </qresource>
 </RCC>

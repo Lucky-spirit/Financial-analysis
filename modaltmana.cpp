@@ -8,4 +8,6 @@ modAltmana::modAltmana(QWidget *parent) :
 void modAltmana::calculate(EvgBasicModel *pInputData)
 {
     qDebug("Altmana calculate!");
+
+
 }

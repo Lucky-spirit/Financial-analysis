@@ -1,7 +1,7 @@
 #include "inputdata.h"
 
 InputData::InputData(QWidget *parent) :
-    EvgBasicModel(InputCount, parent, "", tr("Пожалуйста, введите исходные данные:"))
+    EvgBasicModel(InputCount, parent, "qrc:/models/input", tr("Пожалуйста, введите исходные данные:"))
 {
     this->createTopLayout();
     this->createBottomLayout();
@@ -16,7 +16,7 @@ void InputData::calculate(EvgBasicModel *pInputData)
 
 void InputData::createCalculateButton()
 {
-    btnCalculate = new QPushButton(tr("� ассчитать все"), this);
+    btnCalculate = new QPushButton(tr("Рассчитать все"), this);
 
     connect(btnCalculate, SIGNAL(clicked()), this, SIGNAL(signalCalculate()));
 }

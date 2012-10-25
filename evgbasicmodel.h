@@ -42,6 +42,8 @@ protected:
     QHBoxLayout *topLayout;
     QHBoxLayout *bottomLayout;
     QVBoxLayout *mainLayout;
+
+    virtual void setRowsDefinitions() = 0;
 };
 
 #endif // EVGBASICMODEL_H

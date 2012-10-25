@@ -7,7 +7,7 @@ EvgMenuBar::EvgMenuBar(QWidget *parent) :
 {
     pFileMenu = this->addMenu(tr("&Файл"));
     pEditMenu = this->addMenu(tr("&Правка"));
-    pHelpMenu = this->addMenu(tr("&Помощь"));
+    pHelpMenu = this->addMenu(tr("&Допомога"));
 
     createMenus();
 }
@@ -36,9 +36,9 @@ EvgMenuBar::~EvgMenuBar()
 
 void EvgMenuBar::createMenus()
 {
-    pCalculateAllAction = pFileMenu->addAction(QIcon(":/all/calculator"), tr("Рассчитать все"));
+    pCalculateAllAction = pFileMenu->addAction(QIcon(":/all/calculator"), tr("Розрахувати все"));
     pFileMenu->addSeparator();
-    pQuitAction = pFileMenu->addAction(QIcon(":/all/quit"), tr("&Выход"));
+    pQuitAction = pFileMenu->addAction(QIcon(":/all/quit"), tr("&Вихід"));
 
     this->connect(pCalculateAllAction, SIGNAL(triggered()), this, SIGNAL(calculateAll()));
     this->connect(pQuitAction, SIGNAL(triggered()), this, SIGNAL(signToQuit()));

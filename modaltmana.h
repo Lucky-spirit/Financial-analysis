@@ -3,7 +3,7 @@
 
 #include "evgbasicmodel.h"
 
-const int CountAltmana = 6;
+const int CountAltmana = 5;
 
 class modAltmana : public EvgBasicModel
 {
@@ -15,6 +15,9 @@ signals:
     
 public slots:
     void calculate(EvgBasicModel *pInputData);
+
+protected:
+    void setRowsDefinitions();
 };
 
 #endif // MODALTMANA_H

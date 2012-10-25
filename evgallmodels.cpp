@@ -12,6 +12,7 @@ EvgAllModels::EvgAllModels(QObject *parent) :
     connect(pInputModel, SIGNAL(signalCalculate()), this, SLOT(calculateAllModels()));
 
     pModAltmana = new modAltmana;
+    pModSpringate = new modSpringate;
 }
 
 EvgAllModels::~EvgAllModels()
@@ -32,6 +33,10 @@ EvgBasicModel* EvgAllModels::model(modelTypes model) const
         return pModAltmana;
         break;
 
+    case TypeModelSpringate :
+        return pModSpringate;
+        break;
+
     default :
         std::cerr << "Error in EvgAllModels.model()!" << std::endl;
         return NULL;
@@ -43,7 +48,7 @@ void EvgAllModels::calculateAllModels()
 {
     qDebug("We have click!");
 
-    EvgBasicModel* pointersArray[] = {pModAltmana};
+    EvgBasicModel* pointersArray[] = {pModAltmana, pModSpringate};
 
     for (int i = 0; i < count; i++)
         pointersArray[i]->calculate(pInputModel);

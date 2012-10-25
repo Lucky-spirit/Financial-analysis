@@ -4,10 +4,20 @@
 #include <QObject>
 #include "inputdata.h"
 #include "modaltmana.h"
+#include "modspringate.h"
 
 enum modelTypes {
     TypeModelInput,
-    TypeModelAltman
+    TypeModelAltman,
+    TypeModelSpringate,
+    TypeModelTaffler,
+    TypeModelLis,
+    TypeModelBiver,
+    TypeModelDavidovaBelikova,
+    TypeModelSajfulinKadikov,
+    TypeModelSavickaja,
+    TypeModelTereschenko,
+    TypeModelChupis
 };
 
 class EvgAllModels : public QObject
@@ -28,6 +38,7 @@ private:
     int count;
     InputData *pInputModel;
     modAltmana *pModAltmana;
+    modSpringate *pModSpringate;
 };
 
 #endif // EVGALLMODELS_H

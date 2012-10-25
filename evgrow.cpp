@@ -50,7 +50,7 @@ void EvgRow::setIdText(int newId)
     pIdCoefficient->setText(foo);
 }
 
-void EvgRow::setDefinitionText(QString newText)
+void EvgRow::setTextDefinition(QString newText)
 {
     pDefinitionCoefficient->setText(newText);
 }

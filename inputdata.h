@@ -25,6 +25,8 @@ public slots:
     void calculate(EvgBasicModel *pInputData);
 
 private:
+    void setRowsDefinitions();
+
     QPushButton *btnCalculate;
 };
 

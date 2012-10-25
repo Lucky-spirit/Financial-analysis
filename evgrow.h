@@ -15,7 +15,7 @@ public:
     ~EvgRow();
 
     void setIdText(int newId);
-    void setDefinitionText(QString newText);
+    void setTextDefinition(QString newText);
 
     double getValue() const;
 

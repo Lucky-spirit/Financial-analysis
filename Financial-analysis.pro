@@ -15,7 +15,8 @@ HEADERS += evgallmodels.h \
            evgtextbrowser.h \
            evgwindow.h \
            inputdata.h \
-           modaltmana.h
+           modaltmana.h \
+    modspringate.h
 SOURCES += evgallmodels.cpp \
            evgbasicmodel.cpp \
            evgmenubar.cpp \
@@ -24,5 +25,6 @@ SOURCES += evgallmodels.cpp \
            evgwindow.cpp \
            inputdata.cpp \
            main.cpp \
-           modaltmana.cpp
+           modaltmana.cpp \
+    modspringate.cpp
 RESOURCES += evgResources.qrc

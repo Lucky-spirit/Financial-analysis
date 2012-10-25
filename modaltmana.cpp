@@ -11,3 +11,8 @@ void modAltmana::calculate(EvgBasicModel *pInputData)
 
 
 }
+
+void modAltmana::setRowsDefinitions()
+{
+    pCoefficientRows[0].setTextDefinition(tr("ф.1, р. 260 / ф.1, р. 640 – відношення оборотного капіталу до суми активів"));
+}

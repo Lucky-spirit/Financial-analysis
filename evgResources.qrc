@@ -7,5 +7,6 @@
     <qresource prefix="/models">
         <file alias="altman">files/models/altman.html</file>
         <file alias="input">files/models/input.html</file>
+        <file alias="springate">files/models/springate.html</file>
     </qresource>
 </RCC>

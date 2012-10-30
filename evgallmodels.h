@@ -17,7 +17,8 @@ enum modelTypes {
     TypeModelSajfulinKadikov,
     TypeModelSavickaja,
     TypeModelTereschenko,
-    TypeModelChupis
+    TypeModelChupis,
+    TypeModelMAX
 };
 
 class EvgAllModels : public QObject
@@ -27,7 +28,11 @@ public:
     explicit EvgAllModels(QObject *parent = 0);
     ~EvgAllModels();
 
-    EvgBasicModel* model(modelTypes model) const;
+    EvgBasicModel *model(int model);
+
+    void createAllModels();
+    EvgBasicModel *createModel(const int);
+    void setConnection();
     
 signals:
 
@@ -35,10 +40,7 @@ public slots:
     void calculateAllModels();
 
 private:
-    int count;
-    InputData *pInputModel;
-    modAltmana *pModAltmana;
-    modSpringate *pModSpringate;
+    EvgBasicModel *pAllModelsArray[TypeModelMAX];
 };
 
 #endif // EVGALLMODELS_H

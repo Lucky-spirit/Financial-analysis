@@ -1,7 +1,7 @@
 #include "inputdata.h"
 
 InputData::InputData(QWidget *parent) :
-    EvgBasicModel(InputCount, parent, "qrc:/models/input", tr("Будь ласка, введіть вихідні дані:"))
+    EvgBasicModel(InputCount, parent, "qrc:/models/input", tr("Вихідні дані"), tr("Будь ласка, введіть вихідні дані:"))
 {
     this->createTopLayout();
     this->createBottomLayout();

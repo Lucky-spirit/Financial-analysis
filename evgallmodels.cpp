@@ -4,52 +4,61 @@
 #include <iostream>
 
 EvgAllModels::EvgAllModels(QObject *parent) :
-    QObject(parent),
-    count(1)
+    QObject(parent)
 {
-    pInputModel = new InputData;
-
-    connect(pInputModel, SIGNAL(signalCalculate()), this, SLOT(calculateAllModels()));
-
-    pModAltmana = new modAltmana;
-    pModSpringate = new modSpringate;
+    createAllModels();
+    setConnection();
 }
 
 EvgAllModels::~EvgAllModels()
 {
-    // Supporting comment
-    std::cout << "EvgAllModels destructor is called!" << std::endl;
 }
 
-EvgBasicModel* EvgAllModels::model(modelTypes model) const
+EvgBasicModel * EvgAllModels::model(int model)
 {
-    switch (model)
-    {
-    case TypeModelInput :
-        return pInputModel;
-        break;
-
-    case TypeModelAltman :
-        return pModAltmana;
-        break;
-
-    case TypeModelSpringate :
-        return pModSpringate;
-        break;
-
-    default :
-        std::cerr << "Error in EvgAllModels.model()!" << std::endl;
-        return NULL;
-        break;
-    }
+    return pAllModelsArray[model];
 }
 
 void EvgAllModels::calculateAllModels()
 {
     qDebug("We have click!");
+}
 
-    EvgBasicModel* pointersArray[] = {pModAltmana, pModSpringate};
+void EvgAllModels::createAllModels()
+{
+    pAllModelsArray[TypeModelMAX];
+    for (int i = TypeModelInput; i < TypeModelMAX; i++)
+    {
+        pAllModelsArray[i] = createModel(i);
+    }
+}
 
-    for (int i = 0; i < count; i++)
-        pointersArray[i]->calculate(pInputModel);
+EvgBasicModel* EvgAllModels::createModel(const int type)
+{
+    EvgBasicModel *pointer = NULL;
+
+    switch (type)
+    {
+    case TypeModelInput :
+        pointer = new InputData;
+        break;
+    case TypeModelAltman :
+        pointer = new modAltmana;
+        break;
+    case TypeModelSpringate :
+        pointer = new modSpringate;
+        break;
+
+    default :
+        qDebug("Error with creating model %d.", type);
+        break;
+    }
+
+    return pointer;
+}
+
+void EvgAllModels::setConnection()
+{
+    InputData *pInput = reinterpret_cast<InputData*>(pAllModelsArray[TypeModelInput]);
+    this->connect(pInput, SIGNAL(signalCalculate()), this, SLOT(calculateAllModels()));
 }

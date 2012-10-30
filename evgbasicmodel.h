@@ -13,7 +13,7 @@ class EvgBasicModel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit EvgBasicModel(int coefficientsCount, QWidget *parent = 0, QString source = "", QString formulaText = "");
+    explicit EvgBasicModel(int coefficientsCount, QWidget *parent = 0, QString source = "", QString modelName = "", QString formulaText = "");
     ~EvgBasicModel();
 
     void createRows(int countOfRows);
@@ -24,6 +24,7 @@ public:
     virtual void createMainLayout();
 
     double getValue(int number) const;
+    QString getName() const;
 
 signals:
     void sendCalculateToOthers();
@@ -34,6 +35,7 @@ public slots:
 protected:
     int count;
     float result;
+    QString name;
     QString textOfFormula;
     QLabel *pLabelFormula;
     QLabel *pLabelResult;

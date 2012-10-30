@@ -44,7 +44,12 @@ void EvgWindow::createAllModels()
 
     connect(pItsMenuBar, SIGNAL(calculateAll()), pAllModels, SLOT(calculateAllModels()));
 
-    pItsTabWidget->insertTab(TypeModelInput, pAllModels->model(TypeModelInput), tr("Вихідні дані"));
-    pItsTabWidget->insertTab(TypeModelAltman, pAllModels->model(TypeModelAltman), tr("Модель Альтмана"));
-    pItsTabWidget->insertTab(TypeModelSpringate, pAllModels->model(TypeModelSpringate), tr("Модель Г. Спрінгейта"));
+    for (int i = TypeModelInput; i < TypeModelTaffler; i++)
+    {
+        pItsTabWidget->insertTab(i, pAllModels->model(i), pAllModels->model(i)->getName());
+    }
+
+//    pItsTabWidget->insertTab(TypeModelInput, pAllModels->model(TypeModelInput), tr(""));
+//    pItsTabWidget->insertTab(TypeModelAltman, pAllModels->model(TypeModelAltman), );
+//    pItsTabWidget->insertTab(TypeModelSpringate, pAllModels->model(TypeModelSpringate), tr(""));
 }

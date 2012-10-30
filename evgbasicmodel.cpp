@@ -1,9 +1,10 @@
 #include "evgbasicmodel.h"
 
-EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString source, QString formulaText) :
+EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString source, QString modelName, QString formulaText) :
     QWidget(parent),
     count(coefficientsCount),
     result(0.0f),
+    name(modelName),
     textOfFormula("<h2>" + formulaText + "</h2>")
 {
     pLabelFormula = new QLabel(textOfFormula, this);
@@ -67,4 +68,9 @@ void EvgBasicModel::createMainLayout()
 double EvgBasicModel::getValue(int number) const
 {
     return pCoefficientRows[number].getValue();
+}
+
+QString EvgBasicModel::getName() const
+{
+    return name;
 }

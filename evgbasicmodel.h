@@ -22,6 +22,7 @@ public:
     virtual void createTopLayout();
     virtual void createBottomLayout();
     virtual void createMainLayout();
+    virtual void setRowsDefinitions() = 0;
 
     double getValue(int number) const;
     QString getName() const;
@@ -44,8 +45,6 @@ protected:
     QHBoxLayout *topLayout;
     QHBoxLayout *bottomLayout;
     QVBoxLayout *mainLayout;
-
-    virtual void setRowsDefinitions() = 0;
 };
 
 #endif // EVGBASICMODEL_H

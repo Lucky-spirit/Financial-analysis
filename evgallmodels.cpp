@@ -27,9 +27,10 @@ void EvgAllModels::calculateAllModels()
 void EvgAllModels::createAllModels()
 {
     pAllModelsArray[TypeModelMAX];
-    for (int i = TypeModelInput; i < TypeModelMAX; i++)
+    for (int i = TypeModelInput; i < TypeModelTaffler; i++)
     {
         pAllModelsArray[i] = createModel(i);
+        pAllModelsArray[i]->setRowsDefinitions();
     }
 }
 

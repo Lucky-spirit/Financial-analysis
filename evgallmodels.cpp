@@ -59,6 +59,7 @@ EvgBasicModel* EvgAllModels::createModel(const int type)
 
 void EvgAllModels::setConnection()
 {
-    InputData *pInput = reinterpret_cast<InputData*>(pAllModelsArray[TypeModelInput]);
-    this->connect(pInput, SIGNAL(signalCalculate()), this, SLOT(calculateAllModels()));
+    InputData *pInput = dynamic_cast< InputData * >(pAllModelsArray[TypeModelInput]);
+    if (pInput)
+        this->connect(pInput, SIGNAL(signalCalculate()), this, SLOT(calculateAllModels()));
 }

@@ -60,6 +60,21 @@ double EvgRow::getValue() const
     return pCoefficientValue->value();
 }
 
+QLabel *EvgRow::labelId()
+{
+    return pIdCoefficient;
+}
+
+QDoubleSpinBox *EvgRow::spinBoxRow()
+{
+    return pCoefficientValue;
+}
+
+QLabel *EvgRow::labelDefinition()
+{
+    return pDefinitionCoefficient;
+}
+
 void EvgRow::createSpinBox()
 {
     pCoefficientValue = new QDoubleSpinBox(this);

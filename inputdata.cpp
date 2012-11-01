@@ -3,9 +3,6 @@
 InputData::InputData(QWidget *parent) :
     EvgBasicModel(InputCount, parent, "qrc:/models/input", tr("Вихідні дані"), tr("Будь ласка, введіть вихідні дані:"))
 {
-    this->createTopLayout();
-    this->createBottomLayout();
-    this->createMainLayout();
 }
 
 void InputData::calculate(EvgBasicModel *pInputData)
@@ -23,14 +20,7 @@ void InputData::createCalculateButton()
 
 void InputData::createTopLayout()
 {
-    if (topLayout != NULL)
-    {
-        delete topLayout;
-        topLayout = NULL;
-    }
-
-    if (pLabelResult != NULL)
-        pLabelResult->hide();
+    pLabelResult->hide();
 
     topLayout = new QHBoxLayout;
     topLayout->addStretch(1);
@@ -42,12 +32,6 @@ void InputData::createBottomLayout()
 {
     createCalculateButton();
 
-    if (bottomLayout != NULL)
-    {
-        delete bottomLayout;
-        bottomLayout = NULL;
-    }
-
     bottomLayout = new QHBoxLayout;
     bottomLayout->addStretch(3);
     bottomLayout->addWidget(btnCalculate, 2);
@@ -56,18 +40,11 @@ void InputData::createBottomLayout()
 
 void InputData::createMainLayout()
 {
-    if (mainLayout != NULL)
-    {
-        delete mainLayout;
-        mainLayout = NULL;
-    }
-
     mainLayout = new QVBoxLayout;
 
     mainLayout->addLayout(topLayout, 0);
     mainLayout->addStretch(1);
-    for (int i = 0; i < count; i++)
-        mainLayout->addWidget(&(pCoefficientRows[i]), 0);
+    mainLayout->addLayout(centralLayout);
     mainLayout->addStretch(1);
     mainLayout->addLayout(bottomLayout, 0);
     mainLayout->addStretch(1);
@@ -77,5 +54,4 @@ void InputData::createMainLayout()
 
 void InputData::setRowsDefinitions()
 {
-
 }

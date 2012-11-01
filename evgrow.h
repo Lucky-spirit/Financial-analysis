@@ -19,6 +19,10 @@ public:
 
     double getValue() const;
 
+    QLabel *labelId();
+    QDoubleSpinBox *spinBoxRow();
+    QLabel *labelDefinition();
+
 signals:
     
 public slots:

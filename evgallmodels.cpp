@@ -55,6 +55,14 @@ EvgBasicModel* EvgAllModels::createModel(const int type)
         break;
     }
 
+    if (pointer)
+    {
+        pointer->createTopLayout();
+        pointer->createBottomLayout();
+        pointer->createCentralLayout();
+        pointer->createMainLayout();
+    }
+
     return pointer;
 }
 

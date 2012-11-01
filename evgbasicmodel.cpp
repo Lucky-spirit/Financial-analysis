@@ -13,10 +13,6 @@ EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString sou
 
     pTextDefinitionModel = new evgTextBrowser(0);
     pTextDefinitionModel->setSource(QUrl(source));
-
-    this->createTopLayout();
-    this->createBottomLayout();
-    this->createMainLayout();
 }
 
 EvgBasicModel::~EvgBasicModel()
@@ -53,13 +49,29 @@ void EvgBasicModel::createBottomLayout()
     bottomLayout->addWidget(pTextDefinitionModel, 1);
 }
 
+void EvgBasicModel::createCentralLayout()
+{
+    centralLayout = new QHBoxLayout;
+    centralGrid = new QGridLayout;
+
+    for (int i = 0; i < count; i++)
+    {
+        centralGrid->addWidget(pCoefficientRows[i].labelId(), i, 0, Qt::AlignLeft | Qt::AlignVCenter);
+        centralGrid->addWidget(pCoefficientRows[i].spinBoxRow(), i, 1, Qt::AlignLeft | Qt::AlignVCenter);
+        centralGrid->addWidget(pCoefficientRows[i].labelDefinition(), i, 2, Qt::AlignLeft | Qt::AlignVCenter);
+    }
+
+    centralLayout->addStretch(1);
+    centralLayout->addLayout(centralGrid);
+    centralLayout->addStretch(1);
+}
+
 void EvgBasicModel::createMainLayout()
 {
     mainLayout = new QVBoxLayout;
     mainLayout->addLayout(topLayout, 0);
     mainLayout->addStretch(1);
-    for (int i = 0; i < count; i++)
-        mainLayout->addWidget(&(pCoefficientRows[i]), 0);
+    mainLayout->addLayout(centralLayout);
     mainLayout->addStretch(1);
     mainLayout->addLayout(bottomLayout, 0);
     this->setLayout(mainLayout);

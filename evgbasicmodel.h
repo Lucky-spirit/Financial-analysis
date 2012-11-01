@@ -6,6 +6,7 @@
 #include <QTextBrowser>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QGridLayout>
 #include "evgrow.h"
 #include "evgtextbrowser.h"
 
@@ -21,6 +22,7 @@ public:
 
     virtual void createTopLayout();
     virtual void createBottomLayout();
+    virtual void createCentralLayout();
     virtual void createMainLayout();
     virtual void setRowsDefinitions() = 0;
 
@@ -43,7 +45,9 @@ protected:
     EvgRow *pCoefficientRows;
     evgTextBrowser *pTextDefinitionModel;
     QHBoxLayout *topLayout;
+    QHBoxLayout *centralLayout;
     QHBoxLayout *bottomLayout;
+    QGridLayout *centralGrid;
     QVBoxLayout *mainLayout;
 };
 

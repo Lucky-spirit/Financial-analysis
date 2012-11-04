@@ -1,7 +1,11 @@
 #include "modaltmana.h"
 
 modAltmana::modAltmana(QWidget *parent) :
-    EvgBasicModel(CountAltmana, parent, "qrc:/models/altman", tr("Модель Альтмана"), "Z=0,717X1+0,847X2+3,107X3+0,42X4+0,998X5")
+    EvgBasicModel(CountAltmana,
+                  parent,
+                  tr("qrc:/models/altman"),
+                  tr("Модель Альтмана"),
+                  tr("Z=0,717X1+0,847X2+3,107X3+0,42X4+0,998X5"))
 {
 }
 
@@ -9,7 +13,9 @@ void modAltmana::calculate(EvgBasicModel *pInputData)
 {
     qDebug("Altmana calculate!");
 
+    pCoefficientRows[0].setValue(7.5f);
 
+    result = 13.57f;
 }
 
 void modAltmana::setRowsDefinitions()

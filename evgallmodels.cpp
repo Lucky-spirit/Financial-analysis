@@ -21,7 +21,17 @@ EvgBasicModel * EvgAllModels::model(int model)
 
 void EvgAllModels::calculateAllModels()
 {
-    qDebug("We have click!");
+    InputData *input = dynamic_cast< InputData * > (pAllModelsArray[TypeModelInput]);
+
+    if (input)
+    {
+        for (int i = TypeModelInput; i < TypeModelTaffler; i++)
+        {
+            // pAllModelsArray[i]->setEditable();
+            pAllModelsArray[i]->calculate(input);
+            pAllModelsArray[i]->setResultValue();
+        }
+    }
 }
 
 void EvgAllModels::createAllModels()

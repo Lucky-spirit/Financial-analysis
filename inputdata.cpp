@@ -3,6 +3,7 @@
 InputData::InputData(QWidget *parent) :
     EvgBasicModel(InputCount, parent, "qrc:/models/input", tr("Вихідні дані"), tr("Будь ласка, введіть вихідні дані:"))
 {
+    this->setEditable(TRUE);
 }
 
 void InputData::calculate(EvgBasicModel *pInputData)
@@ -40,7 +41,7 @@ void InputData::createBottomLayout()
 
 void InputData::createCentralLayout()
 {
-    this->EvgBasicModel::createCentralLayout();
+    EvgBasicModel::createCentralLayout();
     centralGrid->setSpacing(5);
 }
 
@@ -60,5 +61,20 @@ void InputData::createMainLayout()
 
 void InputData::setRowsDefinitions()
 {
-
+    pCoefficientRows[0].setTextDefinition(tr("080 Необоротні активи"));
+    pCoefficientRows[1].setTextDefinition(tr("Виробничі запаси"));
+    pCoefficientRows[2].setTextDefinition(tr("260 Оборотний капітал"));
+    pCoefficientRows[3].setTextDefinition(tr("270 Витрати майбутніх періодів"));
+    pCoefficientRows[4].setTextDefinition(tr("300 Статутний капітал"));
+    pCoefficientRows[5].setTextDefinition(tr("350 Нерозподілений прибуток"));
+    pCoefficientRows[6].setTextDefinition(tr("380 Власний капітал"));
+    pCoefficientRows[7].setTextDefinition(tr("480 Довгострокові зобов'язання"));
+    pCoefficientRows[8].setTextDefinition(tr("620 Поточні зобов'язання"));
+    pCoefficientRows[9].setTextDefinition(tr("640 Сукупні активи (Валюта балансу)"));
+    pCoefficientRows[10].setTextDefinition(tr("Чистий Дохід від реалізації"));
+    pCoefficientRows[11].setTextDefinition(tr("Валовий прибуток"));
+    pCoefficientRows[12].setTextDefinition(tr("Операційний прибуток"));
+    pCoefficientRows[13].setTextDefinition(tr("Чистий прибуток"));
+    pCoefficientRows[14].setTextDefinition(tr("Амортизація"));
+    pCoefficientRows[15].setTextDefinition(tr("Інтегральні витрати"));
 }

@@ -60,6 +60,16 @@ double EvgRow::getValue() const
     return pCoefficientValue->value();
 }
 
+void EvgRow::setValue(float value)
+{
+    pCoefficientValue->setValue(value);
+}
+
+void EvgRow::setEditable(bool yes)
+{
+    pCoefficientValue->setReadOnly(!yes);
+}
+
 QLabel *EvgRow::labelId()
 {
     return pIdCoefficient;
@@ -82,4 +92,5 @@ void EvgRow::createSpinBox()
     pCoefficientValue->setMaximum(99999.9999);
     pCoefficientValue->setMinimum(-99999.9999);
     pCoefficientValue->setDecimals(4);
+    pCoefficientValue->setReadOnly(TRUE);
 }

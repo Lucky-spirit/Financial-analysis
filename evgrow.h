@@ -18,6 +18,8 @@ public:
     void setTextDefinition(QString newText);
 
     double getValue() const;
+    void setValue(float value);
+    void setEditable(bool yes = TRUE);
 
     QLabel *labelId();
     QDoubleSpinBox *spinBoxRow();

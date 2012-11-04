@@ -28,10 +28,13 @@ void EvgBasicModel::createRows(int countOfRows)
         pCoefficientRows[i].setIdText(i + 1);
 }
 
-void EvgBasicModel::setResultValue(float value)
+void EvgBasicModel::setResultValue()
 {
-    QString result;
-    pLabelResult->setText(result.setNum(value, 'g', 4));
+    QString strResult;
+    strResult.setNum(result, 'g', 4);
+    strResult.insert(0, tr("<h2> = "));
+    strResult.append(tr("</h2>"));
+    pLabelResult->setText(strResult);
 }
 
 void EvgBasicModel::createTopLayout()
@@ -75,6 +78,14 @@ void EvgBasicModel::createMainLayout()
     mainLayout->addStretch(1);
     mainLayout->addLayout(bottomLayout, 0);
     this->setLayout(mainLayout);
+}
+
+void EvgBasicModel::setEditable(bool yes)
+{
+    for (int i = 0; i < count; i++)
+    {
+        pCoefficientRows[i].setEditable(yes);
+    }
 }
 
 double EvgBasicModel::getValue(int number) const

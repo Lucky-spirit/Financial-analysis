@@ -18,13 +18,14 @@ public:
     ~EvgBasicModel();
 
     void createRows(int countOfRows);
-    void setResultValue(float value);
+    virtual void setResultValue();
 
     virtual void createTopLayout();
     virtual void createBottomLayout();
     virtual void createCentralLayout();
     virtual void createMainLayout();
     virtual void setRowsDefinitions() = 0;
+    virtual void setEditable(bool yes = TRUE);
 
     double getValue(int number) const;
     QString getName() const;

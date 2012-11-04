@@ -12,5 +12,8 @@ void modSpringate::calculate(EvgBasicModel *pInputData)
 
 void modSpringate::setRowsDefinitions()
 {
-
+    pCoefficientRows[0].setTextDefinition(tr("ф.1, р. 260 / ф.1, р. 640 – відношення оборотного капіталу до суми активів;"));
+    pCoefficientRows[1].setTextDefinition(tr("ф.1, р. 350 / ф.1, р. 640 – відношення нерозподіленого прибутку до суми активів;"));
+    pCoefficientRows[2].setTextDefinition(tr("ф.1, р. 350 / ф.1, р. 620 – відношення нерозподіленого прибутку до суми поточних зобов’язань;"));
+    pCoefficientRows[3].setTextDefinition(tr("ф.2, р. 035 / ф.1, р. 640 – відношення чистого доходу до суми активів."));
 }

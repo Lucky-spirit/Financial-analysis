@@ -51,9 +51,8 @@ void EvgBasicModel::createBottomLayout()
 
 void EvgBasicModel::createCentralLayout()
 {
-    centralLayout = new QHBoxLayout;
     centralGrid = new QGridLayout;
-
+    centralGrid->setSpacing(25);
     for (int i = 0; i < count; i++)
     {
         centralGrid->addWidget(pCoefficientRows[i].labelId(), i, 0, Qt::AlignLeft | Qt::AlignVCenter);
@@ -61,6 +60,7 @@ void EvgBasicModel::createCentralLayout()
         centralGrid->addWidget(pCoefficientRows[i].labelDefinition(), i, 2, Qt::AlignLeft | Qt::AlignVCenter);
     }
 
+    centralLayout = new QHBoxLayout;
     centralLayout->addStretch(1);
     centralLayout->addLayout(centralGrid);
     centralLayout->addStretch(1);

@@ -29,6 +29,7 @@ public:
 
     double getValue(int number) const;
     QString getName() const;
+    virtual bool checkForZeros() const;
 
 signals:
     void sendCalculateToOthers();

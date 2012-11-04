@@ -97,3 +97,13 @@ QString EvgBasicModel::getName() const
 {
     return name;
 }
+
+bool EvgBasicModel::checkForZeros() const
+{
+    for (int i = 0; i < count; i++)
+    {
+        if (pCoefficientRows[i].getValue() == 0.0d)
+            return FALSE;
+    }
+    return TRUE;
+}

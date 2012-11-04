@@ -5,7 +5,7 @@
 
 #include <QPushButton>
 
-const int InputCount = 8;
+const int InputCount = 16;
 
 class InputData : public EvgBasicModel
 {
@@ -16,6 +16,7 @@ public:
     void createCalculateButton();
     void createTopLayout();
     void createBottomLayout();
+    void createCentralLayout();
     void createMainLayout();
     
 signals:

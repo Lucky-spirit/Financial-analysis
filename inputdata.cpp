@@ -38,6 +38,12 @@ void InputData::createBottomLayout()
     bottomLayout->addStretch(3);
 }
 
+void InputData::createCentralLayout()
+{
+    this->EvgBasicModel::createCentralLayout();
+    centralGrid->setSpacing(5);
+}
+
 void InputData::createMainLayout()
 {
     mainLayout = new QVBoxLayout;
@@ -54,4 +60,5 @@ void InputData::createMainLayout()
 
 void InputData::setRowsDefinitions()
 {
+
 }

@@ -15,9 +15,9 @@ void modLisa::calculate(EvgBasicModel *pInputData)
     if (pInputData->getValue(8))
         pCoefficientRows[0].setValue(pInputData->getValue(1)/pInputData->getValue(8));
 
-    // 10/9
+    // 11/9
     if (pInputData->getValue(8))
-        pCoefficientRows[1].setValue(pInputData->getValue(9)/pInputData->getValue(8));
+        pCoefficientRows[1].setValue(pInputData->getValue(10)/pInputData->getValue(8));
 
     // 5/9
     if (pInputData->getValue(8))

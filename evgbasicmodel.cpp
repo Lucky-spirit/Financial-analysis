@@ -102,7 +102,7 @@ bool EvgBasicModel::checkForZeros() const
 {
     for (int i = 0; i < count; i++)
     {
-        if (pCoefficientRows[i].getValue() == 0.0d)
+        if (pCoefficientRows[i].getValue() == 0.0)
             return FALSE;
     }
     return TRUE;

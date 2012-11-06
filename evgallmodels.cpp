@@ -25,9 +25,8 @@ void EvgAllModels::calculateAllModels()
 
     if (input)
     {
-        for (int i = TypeModelInput; i < TypeModelTaffler; i++)
+        for (int i = TypeModelInput; i < TypeModelBiver; i++)
         {
-            // pAllModelsArray[i]->setEditable();
             pAllModelsArray[i]->calculate(input);
             pAllModelsArray[i]->setResultValue();
         }
@@ -37,7 +36,7 @@ void EvgAllModels::calculateAllModels()
 void EvgAllModels::createAllModels()
 {
     pAllModelsArray[TypeModelMAX];
-    for (int i = TypeModelInput; i < TypeModelTaffler; i++)
+    for (int i = TypeModelInput; i < TypeModelBiver; i++)
     {
         pAllModelsArray[i] = createModel(i);
         pAllModelsArray[i]->setRowsDefinitions();
@@ -58,6 +57,12 @@ EvgBasicModel* EvgAllModels::createModel(const int type)
         break;
     case TypeModelSpringate :
         pointer = new modSpringate;
+        break;
+    case TypeModelTaffler :
+        pointer = new modTaffler;
+        break;
+    case TypeModelLis :
+        pointer = new modLisa;
         break;
 
     default :

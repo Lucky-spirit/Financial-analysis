@@ -44,12 +44,8 @@ void EvgWindow::createAllModels()
 
     connect(pItsMenuBar, SIGNAL(calculateAll()), pAllModels, SLOT(calculateAllModels()));
 
-    for (int i = TypeModelInput; i < TypeModelTaffler; i++)
+    for (int i = TypeModelInput; i < TypeModelBiver; i++)
     {
         pItsTabWidget->insertTab(i, pAllModels->model(i), pAllModels->model(i)->getName());
     }
-
-//    pItsTabWidget->insertTab(TypeModelInput, pAllModels->model(TypeModelInput), tr(""));
-//    pItsTabWidget->insertTab(TypeModelAltman, pAllModels->model(TypeModelAltman), );
-//    pItsTabWidget->insertTab(TypeModelSpringate, pAllModels->model(TypeModelSpringate), tr(""));
 }

@@ -5,6 +5,8 @@
 #include "inputdata.h"
 #include "modaltmana.h"
 #include "modspringate.h"
+#include "modtaffler.h"
+#include "modlisa.h"
 
 enum modelTypes {
     TypeModelInput,

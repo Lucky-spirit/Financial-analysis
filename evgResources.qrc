@@ -8,5 +8,7 @@
         <file alias="altman">files/models/altman.html</file>
         <file alias="input">files/models/input.html</file>
         <file alias="springate">files/models/springate.html</file>
+        <file alias="lis">files/models/lis.html</file>
+        <file alias="taffler">files/models/taffler.html</file>
     </qresource>
 </RCC>

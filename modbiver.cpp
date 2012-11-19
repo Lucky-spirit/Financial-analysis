@@ -37,7 +37,7 @@ void modBiver::calculate(EvgBasicModel *pInputData)
     // (7+8)/(9-7-8)
     if (pInputData->getValue(8) - pInputData->getValue(6) - pInputData->getValue(7))
         pCoefficientRows[2].setValue((pInputData->getValue(6) + pInputData->getValue(7))\
-                                     / pInputData->getValue(8) - pInputData->getValue(6) - pInputData->getValue(7));
+                                     / (pInputData->getValue(8) - pInputData->getValue(6) - pInputData->getValue(7)));
 
     // 2/9
     if (pInputData->getValue(8))

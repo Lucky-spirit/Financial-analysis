@@ -10,5 +10,6 @@
         <file alias="springate">files/models/springate.html</file>
         <file alias="lis">files/models/lis.html</file>
         <file alias="taffler">files/models/taffler.html</file>
+        <file alias="biver">files/models/biver.html</file>
     </qresource>
 </RCC>

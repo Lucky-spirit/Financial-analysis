@@ -7,6 +7,7 @@
 #include "modspringate.h"
 #include "modtaffler.h"
 #include "modlisa.h"
+#include "modbiver.h"
 
 enum modelTypes {
     TypeModelInput,

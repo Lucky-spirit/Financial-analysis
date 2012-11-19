@@ -36,7 +36,7 @@ void EvgAllModels::calculateAllModels()
 void EvgAllModels::createAllModels()
 {
     pAllModelsArray[TypeModelMAX];
-    for (int i = TypeModelInput; i < TypeModelBiver; i++)
+    for (int i = TypeModelInput; i < TypeModelDavidovaBelikova; i++)
     {
         pAllModelsArray[i] = createModel(i);
         pAllModelsArray[i]->setRowsDefinitions();
@@ -63,6 +63,9 @@ EvgBasicModel* EvgAllModels::createModel(const int type)
         break;
     case TypeModelLis :
         pointer = new modLisa;
+        break;
+    case TypeModelBiver :
+        pointer = new modBiver;
         break;
 
     default :

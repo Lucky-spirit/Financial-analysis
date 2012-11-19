@@ -25,7 +25,7 @@ void EvgAllModels::calculateAllModels()
 
     if (input)
     {
-        for (int i = TypeModelInput; i < TypeModelBiver; i++)
+        for (int i = TypeModelInput; i < TypeModelDavidovaBelikova; i++)
         {
             pAllModelsArray[i]->calculate(input);
             pAllModelsArray[i]->setResultValue();

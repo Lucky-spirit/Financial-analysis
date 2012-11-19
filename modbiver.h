@@ -12,6 +12,7 @@ public:
     explicit modBiver(QWidget *parent = 0);
 
     void setRowsDefinitions();
+    void setResultValue();
     
 signals:
     

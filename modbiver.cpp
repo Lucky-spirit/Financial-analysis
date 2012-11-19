@@ -5,7 +5,7 @@ modBiver::modBiver(QWidget *parent) :
                   parent,
                   tr("qrc:/models/biver"),
                   tr("Модель Бівера"),
-                  tr(""))
+                  tr("Система коефіцієнтів У.Бівера"))
 {
     pLabelResult->setText(tr(""));
 }
@@ -19,34 +19,31 @@ void modBiver::setRowsDefinitions()
     pCoefficientRows[4].setTextDefinition(tr("– коефіцієнт загальної ліквідності."));
 }
 
+void modBiver::setResultValue()
+{
+    pLabelResult->setText(tr(""));
+}
+
 void modBiver::calculate(EvgBasicModel *pInputData)
 {
+    // (13+14)/(7+8)
+    if (pInputData->getValue(6) + pInputData->getValue(7))
+        pCoefficientRows[0].setValue((pInputData->getValue(12) + pInputData->getValue(13))/(pInputData->getValue(6) + pInputData->getValue(7)));
+
+    // (11/9)*100
+    if (pInputData->getValue(8))
+        pCoefficientRows[1].setValue(pInputData->getValue(10)/pInputData->getValue(8) * 100.0f);
+
+    // (7+8)/(9-7-8)
+    if (pInputData->getValue(8) - pInputData->getValue(6) - pInputData->getValue(7))
+        pCoefficientRows[2].setValue((pInputData->getValue(6) + pInputData->getValue(7))\
+                                     / pInputData->getValue(8) - pInputData->getValue(6) - pInputData->getValue(7));
+
     // 2/9
     if (pInputData->getValue(8))
-        pCoefficientRows[0].setValue(pInputData->getValue(1)/pInputData->getValue(8));
+        pCoefficientRows[3].setValue(pInputData->getValue(1)/pInputData->getValue(8));
 
-    // 5/9
-    if (pInputData->getValue(8))
-        pCoefficientRows[1].setValue(pInputData->getValue(4)/pInputData->getValue(8));
-
-    // 12/9
-    if (pInputData->getValue(8))
-        pCoefficientRows[2].setValue(pInputData->getValue(11)/pInputData->getValue(8));
-
-    // 4/(7+8)
-    if (pInputData->getValue(6) + pInputData->getValue(7))
-        pCoefficientRows[3].setValue(pInputData->getValue(3)/(pInputData->getValue(6) + pInputData->getValue(7)));
-
-    // 10/9
-    if (pInputData->getValue(8))
-        pCoefficientRows[4].setValue(pInputData->getValue(9)/pInputData->getValue(8));
-
-    if (checkForZeros())
-        result = 0.717*pCoefficientRows[0].getValue()\
-                + 0.847*pCoefficientRows[1].getValue()\
-                + 3.107*pCoefficientRows[2].getValue()\
-                + 0.42*pCoefficientRows[3].getValue()\
-                + 0.998*pCoefficientRows[4].getValue();
-    else
-        result = 0.0f;
+    // 2/8
+    if (pInputData->getValue(7))
+        pCoefficientRows[4].setValue(pInputData->getValue(1)/pInputData->getValue(7));
 }

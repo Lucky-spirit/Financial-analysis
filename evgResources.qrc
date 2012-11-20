@@ -11,5 +11,6 @@
         <file alias="lis">files/models/lis.html</file>
         <file alias="taffler">files/models/taffler.html</file>
         <file alias="biver">files/models/biver.html</file>
+        <file alias="davidovabelikov">files/models/davidovabelikov.html</file>
     </qresource>
 </RCC>

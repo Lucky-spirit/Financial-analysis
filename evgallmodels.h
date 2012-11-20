@@ -9,6 +9,7 @@
 #include "modlisa.h"
 #include "modbiver.h"
 #include "moddavidovabelikov.h"
+#include "modsajfulinkadikov.h"
 
 enum modelTypes {
     TypeModelInput,

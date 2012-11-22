@@ -13,5 +13,6 @@
         <file alias="biver">files/models/biver.html</file>
         <file alias="davidovabelikov">files/models/davidovabelikov.html</file>
         <file alias="sajfulinkadikov">files/models/sajfulinkadikov.html</file>
+        <file alias="savickaja">files/models/savickaja.html</file>
     </qresource>
 </RCC>

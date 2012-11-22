@@ -25,7 +25,7 @@ void EvgAllModels::calculateAllModels()
 
     if (input)
     {
-        for (int i = TypeModelInput; i < TypeModelSavickaja; i++)
+        for (int i = TypeModelInput; i < TypeModelTereschenko; i++)
         {
             pAllModelsArray[i]->calculate(input);
             pAllModelsArray[i]->setResultValue();
@@ -36,7 +36,7 @@ void EvgAllModels::calculateAllModels()
 void EvgAllModels::createAllModels()
 {
     pAllModelsArray[TypeModelMAX];
-    for (int i = TypeModelInput; i < TypeModelSavickaja; i++)
+    for (int i = TypeModelInput; i < TypeModelTereschenko; i++)
     {
         pAllModelsArray[i] = createModel(i);
         pAllModelsArray[i]->setRowsDefinitions();
@@ -72,6 +72,9 @@ EvgBasicModel* EvgAllModels::createModel(const int type)
         break;
     case TypeModelSajfulinKadikov :
         pointer = new modSajfulinKadikov;
+        break;
+    case TypeModelSavickaja :
+        pointer = new modSavickaja;
         break;
 
     default :

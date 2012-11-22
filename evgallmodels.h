@@ -10,6 +10,7 @@
 #include "modbiver.h"
 #include "moddavidovabelikov.h"
 #include "modsajfulinkadikov.h"
+#include "modsavickaja.h"
 
 enum modelTypes {
     TypeModelInput,

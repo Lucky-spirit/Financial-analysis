@@ -21,7 +21,8 @@ HEADERS += evgallmodels.h \
     modtaffler.h \
     modbiver.h \
     moddavidovabelikov.h \
-    modsajfulinkadikov.h
+    modsajfulinkadikov.h \
+    modsavickaja.h
 SOURCES += evgallmodels.cpp \
            evgbasicmodel.cpp \
            evgmenubar.cpp \
@@ -36,5 +37,6 @@ SOURCES += evgallmodels.cpp \
     modtaffler.cpp \
     modbiver.cpp \
     moddavidovabelikov.cpp \
-    modsajfulinkadikov.cpp
+    modsajfulinkadikov.cpp \
+    modsavickaja.cpp
 RESOURCES += evgResources.qrc

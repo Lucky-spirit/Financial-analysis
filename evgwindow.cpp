@@ -44,7 +44,7 @@ void EvgWindow::createAllModels()
 
     connect(pItsMenuBar, SIGNAL(calculateAll()), pAllModels, SLOT(calculateAllModels()));
 
-    for (int i = TypeModelInput; i < TypeModelSavickaja; i++)
+    for (int i = TypeModelInput; i < TypeModelTereschenko; i++)
     {
         pItsTabWidget->insertTab(i, pAllModels->model(i), pAllModels->model(i)->getName());
     }

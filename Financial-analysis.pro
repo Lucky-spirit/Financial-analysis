@@ -6,6 +6,7 @@ TEMPLATE = app
 TARGET = 
 DEPENDPATH += .
 INCLUDEPATH += .
+CONFIG += rtti
 
 # Input
 HEADERS += evgallmodels.h \
@@ -22,7 +23,9 @@ HEADERS += evgallmodels.h \
     modbiver.h \
     moddavidovabelikov.h \
     modsajfulinkadikov.h \
-    modsavickaja.h
+    modsavickaja.h \
+    modtereschenko.h \
+    modchupis.h
 SOURCES += evgallmodels.cpp \
            evgbasicmodel.cpp \
            evgmenubar.cpp \
@@ -38,5 +41,7 @@ SOURCES += evgallmodels.cpp \
     modbiver.cpp \
     moddavidovabelikov.cpp \
     modsajfulinkadikov.cpp \
-    modsavickaja.cpp
+    modsavickaja.cpp \
+    modtereschenko.cpp \
+    modchupis.cpp
 RESOURCES += evgResources.qrc

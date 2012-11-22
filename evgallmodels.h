@@ -11,6 +11,8 @@
 #include "moddavidovabelikov.h"
 #include "modsajfulinkadikov.h"
 #include "modsavickaja.h"
+#include "modtereschenko.h"
+#include "modchupis.h"
 
 enum modelTypes {
     TypeModelInput,

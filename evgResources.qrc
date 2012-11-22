@@ -14,5 +14,7 @@
         <file alias="davidovabelikov">files/models/davidovabelikov.html</file>
         <file alias="sajfulinkadikov">files/models/sajfulinkadikov.html</file>
         <file alias="savickaja">files/models/savickaja.html</file>
+        <file alias="tereschenko">files/models/tereschenko.html</file>
+        <file alias="chupis">files/models/chupis.html</file>
     </qresource>
 </RCC>

@@ -61,19 +61,19 @@ void InputData::createMainLayout()
 
 void InputData::setRowsDefinitions()
 {
-    pCoefficientRows[0].setTextDefinition(tr("080 Необоротні активи"));
-    pCoefficientRows[1].setTextDefinition(tr("260 Оборотний капітал"));
-    pCoefficientRows[2].setTextDefinition(tr("270 Витрати майбутніх періодів"));
-    pCoefficientRows[3].setTextDefinition(tr("300 Статутний капітал"));
-    pCoefficientRows[4].setTextDefinition(tr("350 Нерозподілений прибуток"));
-    pCoefficientRows[5].setTextDefinition(tr("380 Власний капітал"));
-    pCoefficientRows[6].setTextDefinition(tr("480 Довгострокові зобов'язання"));
-    pCoefficientRows[7].setTextDefinition(tr("620 Поточні зобов'язання"));
-    pCoefficientRows[8].setTextDefinition(tr("640 Сукупні активи (Валюта балансу)"));
-    pCoefficientRows[9].setTextDefinition(tr("Чистий Дохід від реалізації"));
-    pCoefficientRows[10].setTextDefinition(tr("Валовий прибуток"));
-    pCoefficientRows[11].setTextDefinition(tr("Операційний прибуток"));
-    pCoefficientRows[12].setTextDefinition(tr("Чистий прибуток"));
-    pCoefficientRows[13].setTextDefinition(tr("Амортизація"));
-    pCoefficientRows[14].setTextDefinition(tr("Інтегральні витрати"));
+    pCoefficientRows[0].setTextDefinition(tr("ф. 1. р. 080 Необоротні активи"));
+    pCoefficientRows[1].setTextDefinition(tr("ф. 1. р. 260 Оборотні активи"));
+    pCoefficientRows[2].setTextDefinition(tr("ф. 1. р. 270 Витрати майбутніх періодів"));
+    pCoefficientRows[3].setTextDefinition(tr("ф. 1. р. 300 Статутний капітал"));
+    pCoefficientRows[4].setTextDefinition(tr("ф. 1. р. 350 Нерозподілений прибуток"));
+    pCoefficientRows[5].setTextDefinition(tr("ф. 1. р. 380 Власний капітал"));
+    pCoefficientRows[6].setTextDefinition(tr("ф. 1. р. 480 Довгострокові зобов’язання"));
+    pCoefficientRows[7].setTextDefinition(tr("ф. 1. р. 620 Поточні зобов’язання"));
+    pCoefficientRows[8].setTextDefinition(tr("ф. 1. р. 640 Всього активів (валюта балансу)"));
+    pCoefficientRows[9].setTextDefinition(tr("ф. 2. р. 035 Чистий дохід від реалізації"));
+    pCoefficientRows[10].setTextDefinition(tr("ф. 2. р. 050 (055) Валовий прибуток (збиток)"));
+    pCoefficientRows[11].setTextDefinition(tr("ф. 2. р. 100 (105) Операційний прибуток (збиток)"));
+    pCoefficientRows[12].setTextDefinition(tr("ф. 2. р. 220 (225) Чистий прибуток (збиток)"));
+    pCoefficientRows[13].setTextDefinition(tr("ф. 2. р. 260 Амортизація"));
+    pCoefficientRows[14].setTextDefinition(tr("ф. 2. р. 070-090 Інтегральні витрати"));
 }

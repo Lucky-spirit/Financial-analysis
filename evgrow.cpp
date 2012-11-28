@@ -37,9 +37,6 @@ EvgRow::~EvgRow()
         delete pDefinitionCoefficient;
         pDefinitionCoefficient = NULL;
     }
-
-    // Supporting comment
-    std::cout << "evgRow Destructor is called!" << std::endl;
 }
 
 void EvgRow::setIdText(int newId)

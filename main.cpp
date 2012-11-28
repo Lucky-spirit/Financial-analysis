@@ -12,6 +12,7 @@ int main(int argc, char **argv)
     EvgWindow *pItsWindow = new EvgWindow;
 
     QObject::connect(&app, SIGNAL(aboutToQuit()), pItsWindow, SLOT(mayToQuit()));
+    QObject::connect(pItsWindow->menuBar(), SIGNAL(aboutQt()), &app, SLOT(aboutQt()));
 
     pItsWindow->showMaximized();
 

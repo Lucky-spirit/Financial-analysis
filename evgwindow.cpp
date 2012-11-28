@@ -19,6 +19,11 @@ EvgWindow::~EvgWindow()
     std::cout << "EvgWindow Destructor is called!" << std::endl;
 }
 
+QMenuBar *EvgWindow::menuBar() const
+{
+    return pItsMenuBar;
+}
+
 void EvgWindow::mayToQuit()
 {
     delete this;

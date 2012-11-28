@@ -40,6 +40,9 @@ void EvgMenuBar::createMenus()
     pFileMenu->addSeparator();
     pQuitAction = pFileMenu->addAction(QIcon(":/all/quit"), tr("&Вихід"));
 
+    QAction *aboutQt = pHelpMenu->addAction(tr("Про Qt"));
+
     this->connect(pCalculateAllAction, SIGNAL(triggered()), this, SIGNAL(calculateAll()));
     this->connect(pQuitAction, SIGNAL(triggered()), this, SIGNAL(signToQuit()));
+    this->connect(aboutQt, SIGNAL(triggered()), this, SIGNAL(aboutQt()));
 }

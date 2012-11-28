@@ -14,6 +14,7 @@ public:
 signals:
     void calculateAll();
     void signToQuit();
+    void aboutQt();
 
 public slots:
 

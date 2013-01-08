@@ -13,6 +13,8 @@ class EvgWindow : public QMainWindow
 public:
     explicit EvgWindow(QWidget *parent = 0);
     ~EvgWindow();
+
+    QMenuBar *menuBar() const;
     
 signals:
 

@@ -13,6 +13,7 @@
 #include "modsavickaja.h"
 #include "modtereschenko.h"
 #include "modchupis.h"
+#include "modgeneral.h"
 
 enum modelTypes {
     TypeModelInput,
@@ -26,6 +27,7 @@ enum modelTypes {
     TypeModelSavickaja,
     TypeModelTereschenko,
     TypeModelChupis,
+    TypeModelGeneral,
     TypeModelMAX
 };
 

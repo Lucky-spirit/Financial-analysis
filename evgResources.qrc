@@ -16,5 +16,6 @@
         <file alias="savickaja">files/models/savickaja.html</file>
         <file alias="tereschenko">files/models/tereschenko.html</file>
         <file alias="chupis">files/models/chupis.html</file>
+        <file alias="general">files/models/general.html</file>
     </qresource>
 </RCC>

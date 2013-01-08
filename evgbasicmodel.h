@@ -17,7 +17,7 @@ public:
     explicit EvgBasicModel(int coefficientsCount, QWidget *parent = 0, QString source = "", QString modelName = "", QString formulaText = "");
     ~EvgBasicModel();
 
-    void createRows(int countOfRows);
+    virtual void createRows(int countOfRows);
     virtual void setResultValue();
 
     virtual void createTopLayout();
@@ -29,6 +29,8 @@ public:
 
     double getValue(int number) const;
     QString getName() const;
+    TypeState getState() const;
+
     virtual bool checkForZeros() const;
 
 signals:
@@ -51,6 +53,7 @@ protected:
     QHBoxLayout *bottomLayout;
     QGridLayout *centralGrid;
     QVBoxLayout *mainLayout;
+    TypeState _state;
 };
 
 #endif // EVGBASICMODEL_H

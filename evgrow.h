@@ -7,6 +7,13 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
+enum TypeState {
+    TypeStateUndefined = -1,
+    TypeStateUnstable,
+    TypeStateMiddle,
+    TypeStateStable
+};
+
 class EvgRow : public QWidget
 {
     Q_OBJECT

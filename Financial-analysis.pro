@@ -25,7 +25,9 @@ HEADERS += evgallmodels.h \
     modsajfulinkadikov.h \
     modsavickaja.h \
     modtereschenko.h \
-    modchupis.h
+    modchupis.h \
+    modgeneral.h \
+    extendrow.h
 SOURCES += evgallmodels.cpp \
            evgbasicmodel.cpp \
            evgmenubar.cpp \
@@ -43,5 +45,7 @@ SOURCES += evgallmodels.cpp \
     modsajfulinkadikov.cpp \
     modsavickaja.cpp \
     modtereschenko.cpp \
-    modchupis.cpp
+    modchupis.cpp \
+    modgeneral.cpp \
+    extendrow.cpp
 RESOURCES += evgResources.qrc

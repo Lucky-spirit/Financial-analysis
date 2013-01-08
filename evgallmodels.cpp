@@ -82,6 +82,9 @@ EvgBasicModel* EvgAllModels::createModel(const int type)
     case TypeModelChupis :
         pointer = new modChupis;
         break;
+    case TypeModelGeneral :
+        pointer = new modGeneral;
+        break;
 
     default :
         qDebug("Error with creating model %d.", type);

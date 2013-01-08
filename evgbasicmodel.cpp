@@ -5,7 +5,8 @@ EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString sou
     count(coefficientsCount),
     result(0.0f),
     name(modelName),
-    textOfFormula("<h2>" + formulaText + "</h2>")
+    textOfFormula("<h2>" + formulaText + "</h2>"),
+    _state(TypeStateUndefined)
 {
     pLabelFormula = new QLabel(textOfFormula, this);
     pLabelResult = new QLabel(tr("<h2> = ?</h2>"), this);

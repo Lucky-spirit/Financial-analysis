@@ -82,6 +82,8 @@ void modGeneral::calculate(EvgBasicModel *pInputData)
         _state = TypeStateMiddle;
     else
         _state = TypeStateStable;
+
+    pCoefficientRows[10]->setStringByState(_state);
 }
 
 void modGeneral::calculate(int number, EvgBasicModel *model)

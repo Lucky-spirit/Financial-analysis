@@ -1,6 +1,6 @@
 #include "evgbasicmodel.h"
 
-EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString source, QString modelName, QString formulaText) :
+EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString source, QString modelName, QString formulaText, bool extended) :
     QWidget(parent),
     count(coefficientsCount),
     result(0.0f),
@@ -10,7 +10,7 @@ EvgBasicModel::EvgBasicModel(int coefficientsCount, QWidget *parent, QString sou
 {
     pLabelFormula = new QLabel(textOfFormula, this);
     pLabelResult = new QLabel(tr("<h2> = ?</h2>"), this);
-    createRows(count);
+    createRows(extended);
 
     pTextDefinitionModel = new evgTextBrowser(0);
     pTextDefinitionModel->setSource(QUrl(source));
@@ -21,12 +21,29 @@ EvgBasicModel::~EvgBasicModel()
     delete [] pCoefficientRows;
 }
 
-void EvgBasicModel::createRows(int countOfRows)
+void EvgBasicModel::createRows(bool extended)
 {
-    pCoefficientRows = new EvgRow[countOfRows];
+    pCoefficientRows = new EvgRow*[count];
+    for (int i=0; i < count; i++)
+    {
+        if (extended)
+            pCoefficientRows[i] = new ExtendRow;
+        else
+            pCoefficientRows[i] = new EvgRow;
+    }
 
-    for (int i = 0; i < countOfRows; i++)
-        pCoefficientRows[i].setIdText(i + 1);
+    // Init all Rows by their type
+    for (int i = 0; i < count; i++)
+    {
+        pCoefficientRows[i]->init();
+        pCoefficientRows[i]->settingLayout();
+        pCoefficientRows[i]->setIdText(i + 1);
+    }
+}
+
+float EvgBasicModel::getResult() const
+{
+    return result;
 }
 
 void EvgBasicModel::setResultValue()
@@ -59,9 +76,9 @@ void EvgBasicModel::createCentralLayout()
     centralGrid->setSpacing(25);
     for (int i = 0; i < count; i++)
     {
-        centralGrid->addWidget(pCoefficientRows[i].labelId(), i, 0, Qt::AlignLeft | Qt::AlignVCenter);
-        centralGrid->addWidget(pCoefficientRows[i].spinBoxRow(), i, 1, Qt::AlignLeft | Qt::AlignVCenter);
-        centralGrid->addWidget(pCoefficientRows[i].labelDefinition(), i, 2, Qt::AlignLeft | Qt::AlignVCenter);
+        centralGrid->addWidget(pCoefficientRows[i]->labelId(), i, 0, Qt::AlignLeft | Qt::AlignVCenter);
+        centralGrid->addWidget(pCoefficientRows[i]->spinBoxRow(), i, 1, Qt::AlignLeft | Qt::AlignVCenter);
+        centralGrid->addWidget(pCoefficientRows[i]->labelDefinition(), i, 2, Qt::AlignLeft | Qt::AlignVCenter);
     }
 
     centralLayout = new QHBoxLayout;
@@ -85,13 +102,13 @@ void EvgBasicModel::setEditable(bool yes)
 {
     for (int i = 0; i < count; i++)
     {
-        pCoefficientRows[i].setEditable(yes);
+        pCoefficientRows[i]->setEditable(yes);
     }
 }
 
 double EvgBasicModel::getValue(int number) const
 {
-    return pCoefficientRows[number].getValue();
+    return pCoefficientRows[number]->getValue();
 }
 
 QString EvgBasicModel::getName() const
@@ -99,11 +116,21 @@ QString EvgBasicModel::getName() const
     return name;
 }
 
+TypeState EvgBasicModel::getState() const
+{
+    return _state;
+}
+
+void EvgBasicModel::setTypeState(TypeState newState)
+{
+    _state = newState;
+}
+
 bool EvgBasicModel::checkForZeros() const
 {
     for (int i = 0; i < count; i++)
     {
-        if (pCoefficientRows[i].getValue() == 0.0)
+        if (pCoefficientRows[i]->getValue() == 0.0)
             return FALSE;
     }
     return TRUE;

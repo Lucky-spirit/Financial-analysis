@@ -7,17 +7,18 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QGridLayout>
-#include "evgrow.h"
+#include "extendrow.h"
 #include "evgtextbrowser.h"
 
 class EvgBasicModel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit EvgBasicModel(int coefficientsCount, QWidget *parent = 0, QString source = "", QString modelName = "", QString formulaText = "");
+    explicit EvgBasicModel(int coefficientsCount, QWidget *parent = 0, QString source = "", QString modelName = "", QString formulaText = "", bool extended = FALSE);
     ~EvgBasicModel();
 
-    virtual void createRows(int countOfRows);
+    virtual void createRows(bool extended);
+    virtual float getResult() const;
     virtual void setResultValue();
 
     virtual void createTopLayout();
@@ -30,6 +31,7 @@ public:
     double getValue(int number) const;
     QString getName() const;
     TypeState getState() const;
+    void setTypeState(TypeState newState);
 
     virtual bool checkForZeros() const;
 
@@ -46,7 +48,7 @@ protected:
     QString textOfFormula;
     QLabel *pLabelFormula;
     QLabel *pLabelResult;
-    EvgRow *pCoefficientRows;
+    EvgRow **pCoefficientRows;
     evgTextBrowser *pTextDefinitionModel;
     QHBoxLayout *topLayout;
     QHBoxLayout *centralLayout;

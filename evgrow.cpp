@@ -6,18 +6,6 @@
 EvgRow::EvgRow(QWidget *parent) :
     QWidget(parent)
 {
-    pIdCoefficient = new QLabel("", this);
-    createSpinBox();
-    pDefinitionCoefficient = new QLabel("", this);
-
-    QHBoxLayout *layoutHor = new QHBoxLayout;
-    layoutHor->addStretch(1);
-    layoutHor->addWidget(pIdCoefficient);
-    layoutHor->addWidget(pCoefficientValue);
-    layoutHor->addWidget(pDefinitionCoefficient, 2);
-    layoutHor->addStretch(1);
-
-    this->setLayout(layoutHor);
 }
 
 EvgRow::~EvgRow()
@@ -39,12 +27,52 @@ EvgRow::~EvgRow()
     }
 }
 
+void EvgRow::init()
+{
+    pIdCoefficient = new QLabel("", this);
+    pDefinitionCoefficient = new QLabel("", this);
+    createSpinBox();
+}
+
+void EvgRow::createSpinBox()
+{
+    pCoefficientValue = new QDoubleSpinBox(this);
+
+    pCoefficientValue->setMaximum(99999.9999);
+    pCoefficientValue->setMinimum(-99999.9999);
+    pCoefficientValue->setDecimals(4);
+    pCoefficientValue->setReadOnly(TRUE);
+}
+
+void EvgRow::settingLayout()
+{
+    QHBoxLayout *layoutHor = new QHBoxLayout;
+
+    layoutHor->addStretch(1);
+    layoutHor->addWidget(pIdCoefficient);
+    layoutHor->addWidget(pCoefficientValue);
+    layoutHor->addWidget(pDefinitionCoefficient, 2);
+    layoutHor->addStretch(1);
+
+    this->setLayout(layoutHor);
+}
+
 void EvgRow::setIdText(int newId)
 {
     QString foo;
     foo.setNum(newId);
     foo.insert(0, "x");
     pIdCoefficient->setText(foo);
+}
+
+void EvgRow::changeIdToText(QString &)
+{
+    qDebug("EvgRow::%s error! V-Table.", __FUNCTION__);
+}
+
+void EvgRow::setStringByState(TypeState state)
+{
+    qDebug("EvgRow::%s error! V-Table.", __FUNCTION__);
 }
 
 void EvgRow::setTextDefinition(QString newText)
@@ -80,14 +108,4 @@ QDoubleSpinBox *EvgRow::spinBoxRow()
 QLabel *EvgRow::labelDefinition()
 {
     return pDefinitionCoefficient;
-}
-
-void EvgRow::createSpinBox()
-{
-    pCoefficientValue = new QDoubleSpinBox(this);
-
-    pCoefficientValue->setMaximum(99999.9999);
-    pCoefficientValue->setMinimum(-99999.9999);
-    pCoefficientValue->setDecimals(4);
-    pCoefficientValue->setReadOnly(TRUE);
 }

@@ -25,17 +25,23 @@ void EvgAllModels::calculateAllModels()
 
     if (input)
     {
-        for (int i = TypeModelInput; i < TypeModelMAX; i++)
+        for (int i = TypeModelInput; i < TypeModelGeneral; i++)
         {
             pAllModelsArray[i]->calculate(input);
             pAllModelsArray[i]->setResultValue();
         }
     }
+
+    modGeneral *genModel = dynamic_cast< modGeneral * > (pAllModelsArray[TypeModelGeneral]);
+    if (genModel)
+    {for (int i = TypeModelAltman; i < TypeModelGeneral; i++)
+            genModel->calculate(i, pAllModelsArray[i]);
+    }
 }
 
 void EvgAllModels::createAllModels()
 {
-    pAllModelsArray[TypeModelMAX];
+    // pAllModelsArray[TypeModelMAX];
     for (int i = TypeModelInput; i < TypeModelMAX; i++)
     {
         pAllModelsArray[i] = createModel(i);

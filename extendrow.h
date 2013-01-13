@@ -9,14 +9,18 @@ class ExtendRow : public EvgRow
 public:
     explicit ExtendRow(QWidget *parent = 0);
 
+    // Init functions;
+    void init();
+
+    void changeIdToText(QString &idName);
     void setStringByState(TypeState state);
-    
+
 signals:
     
 public slots:
 
 private:
-    QLabel *stateDefinition;
+
 };
 
 #endif // EXTENDROW_H

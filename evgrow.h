@@ -21,25 +21,26 @@ public:
     explicit EvgRow(QWidget *parent = 0);
     ~EvgRow();
 
-    void setIdText(int newId);
-    void setTextDefinition(QString newText);
+    // Section for initialize rows;
+    virtual void init();
+    void createSpinBox();
+    virtual void settingLayout();
 
+    // Getters and Setters below;
+    void setIdText(int newId);
+    virtual void changeIdToText(QString &);
+    virtual void setStringByState(TypeState state);
+    void setTextDefinition(QString newText);
     double getValue() const;
     void setValue(float value);
+
     void setEditable(bool yes = TRUE);
 
     QLabel *labelId();
     QDoubleSpinBox *spinBoxRow();
     QLabel *labelDefinition();
 
-signals:
-    
-public slots:
-    
-private:
-    void createSpinBox();
-
-private:
+protected:
     QLabel *pIdCoefficient;
     QDoubleSpinBox *pCoefficientValue;
     QLabel *pDefinitionCoefficient;

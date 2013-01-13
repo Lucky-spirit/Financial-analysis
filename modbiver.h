@@ -11,6 +11,8 @@ class modBiver : public EvgBasicModel
 public:
     explicit modBiver(QWidget *parent = 0);
 
+    float getResult() const;
+
     void setRowsDefinitions();
     void setResultValue();
     

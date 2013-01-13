@@ -2,9 +2,8 @@
 #define MODGENERAL_H
 
 #include "evgbasicmodel.h"
-#include "extendrow.h"
 
-const int CountGeneral = 10;
+const int CountGeneral = 11;
 
 class modGeneral : public EvgBasicModel
 {
@@ -12,13 +11,21 @@ class modGeneral : public EvgBasicModel
 public:
     explicit modGeneral(QWidget *parent = 0);
 
+
     void setRowsDefinitions();
-    void createRows(int countOfRows);
+    void setCofficientName();
+
+    void createTopLayout();
+    void createCentralLayout();
     
 signals:
     
 public slots:
     void calculate(EvgBasicModel *pInputData);
+    void calculate(int number, EvgBasicModel *model);
+
+private:
+    QString *modelsNames;
 };
 
 #endif // MODGENERAL_H

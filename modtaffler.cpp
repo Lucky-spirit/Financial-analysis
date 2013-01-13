@@ -5,7 +5,7 @@ modTaffler::modTaffler(QWidget *parent) :
                   parent,
                   tr("qrc:/models/taffler"),
                   tr("Модель Р. Таффлера"),
-                  tr("Z=0,53X1+0,13X2+0,18X3+0,16X4"))
+                  tr("Z = 0,53X<sub>1</sub> + 0,13X<sub>2</sub> + 0,18X<sub>3</sub> + 0,16X<sub>4</sub>"))
 {
 }
 
@@ -49,8 +49,8 @@ void modTaffler::calculate(EvgBasicModel *pInputData)
 
 void modTaffler::setRowsDefinitions()
 {
-    pCoefficientRows[0]->setTextDefinition(tr("ф.2, р. 050(055) / ф.1, р. 620 – відношення валового прибутку до суми поточних зобов'язань;"));
-    pCoefficientRows[1]->setTextDefinition(tr("ф.1, р. 260 / (ф.1, р. 480+620) – відношення оборотних активів до суми зобов'язань;"));
-    pCoefficientRows[2]->setTextDefinition(tr("ф.1, р. 620 / ф.1, р. 640 – відношення поточних зобов’язань до суми активів;"));
-    pCoefficientRows[3]->setTextDefinition(tr("ф.2, р. 035 / ф.1, р. 640 – відношення чистого доходу до суми активів."));
+    pCoefficientRows[0]->setTextDefinition(tr("ф. 2. р. 050 (055) / ф.1. р. 620 – відношення валового прибутку до суми поточних зобов'язань"));
+    pCoefficientRows[1]->setTextDefinition(tr("ф. 1. р. 260 / (ф. 1. р. 480 + 620) – відношення оборотних активів до суми зобов'язань"));
+    pCoefficientRows[2]->setTextDefinition(tr("ф. 1. р. 620 / ф.1. р. 640 – відношення поточних зобов’язань до суми активів"));
+    pCoefficientRows[3]->setTextDefinition(tr("ф. 2. р. 035 / ф.1. р. 640 – відношення чистого доходу до суми активів"));
 }

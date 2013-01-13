@@ -5,7 +5,7 @@ modLisa::modLisa(QWidget *parent) :
                   parent,
                   tr("qrc:/models/lis"),
                   tr("Модель Р. Ліса"),
-                  tr("Z=0,063Х1+0,092Х2+0,057Х3+0,001Х4"))
+                  tr("Z = 0,063Х<sub>1</sub> + 0,092Х<sub>2</sub> + 0,057Х<sub>3</sub> + 0,001Х<sub>4</sub>"))
 {
 }
 
@@ -47,8 +47,8 @@ void modLisa::calculate(EvgBasicModel *pInputData)
 
 void modLisa::setRowsDefinitions()
 {
-    pCoefficientRows[0]->setTextDefinition(tr("ф.1, р. 260 / ф.1, р. 640 – відношення оборотного капіталу до суми активів;"));
-    pCoefficientRows[1]->setTextDefinition(tr("ф.2, р. 050(055) / ф.1, р. 640 – відношення валового прибутку до суми активів;"));
-    pCoefficientRows[2]->setTextDefinition(tr("ф.1, р. 350 / ф.1, р. 640 – відношення нерозподіленого прибутку до суми активів;"));
-    pCoefficientRows[3]->setTextDefinition(tr("ф.1, р. 380 / (ф.1, р. 480+620) – відношення власного капіталу до суми зобов’язань."));
+    pCoefficientRows[0]->setTextDefinition(tr("ф. 1. р. 260 / ф. 1. р. 640 – відношення оборотного капіталу до суми активів"));
+    pCoefficientRows[1]->setTextDefinition(tr("ф. 2. р. 050 (055) / ф. 1. р. 640 – відношення валового прибутку до суми активів"));
+    pCoefficientRows[2]->setTextDefinition(tr("ф. 1. р. 350 / ф. 1. р. 640 – відношення нерозподіленого прибутку до суми активів"));
+    pCoefficientRows[3]->setTextDefinition(tr("ф. 1. р. 380 / (ф. 1. р. 480 + 620) – відношення власного капіталу до суми зобов’язань"));
 }

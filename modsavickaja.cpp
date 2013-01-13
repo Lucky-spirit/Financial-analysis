@@ -5,16 +5,16 @@ modSavickaja::modSavickaja(QWidget *parent) :
                   parent,
                   tr("qrc:/models/savickaja"),
                   tr("Модель Савицької"),
-                  tr("Z=1–0,98Х1–1,8Х2–1,83Х3-0,28Х4"))
+                  tr("Z = 1 – 0,98Х<sub>1</sub> – 1,8Х<sub>2</sub> – 1,83Х<sub>3</sub> - 0,28Х<sub>4</sub>"))
 {
 }
 
 void modSavickaja::setRowsDefinitions()
 {
-    pCoefficientRows[0]->setTextDefinition(tr("(ф.1, р. 260+270-620-630)/ ф.1, р. 640 – відношення робочого капіталу до суми активів;"));
-    pCoefficientRows[1]->setTextDefinition(tr("ф.2, р. 035 / ф.1, р. 260– відношення чистого доходу до суми оборотних активів;"));
-    pCoefficientRows[2]->setTextDefinition(tr("ф.1, р. 380 / ф.1, р. 640 – відношення власного капіталу до суми активів;"));
-    pCoefficientRows[3]->setTextDefinition(tr("ф.2, р. 220(225) / ф.1, р. 380 – відношення чистого прибутку до власного капіталу."));
+    pCoefficientRows[0]->setTextDefinition(tr("(ф. 1. р. 260 + 270 - 620 - 630) / ф. 1. р. 640 – відношення робочого капіталу до суми активів"));
+    pCoefficientRows[1]->setTextDefinition(tr("ф. 2. р. 035 / ф. 1. р. 260 – відношення чистого доходу до суми оборотних активів"));
+    pCoefficientRows[2]->setTextDefinition(tr("ф. 1. р. 380 / ф. 1. р. 640 – відношення власного капіталу до суми активів"));
+    pCoefficientRows[3]->setTextDefinition(tr("ф. 2. р. 220 (225) / ф. 1. р. 380 – відношення чистого прибутку до власного капіталу"));
 }
 
 void modSavickaja::calculate(EvgBasicModel *pInputData)

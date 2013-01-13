@@ -75,5 +75,5 @@ void InputData::setRowsDefinitions()
     pCoefficientRows[11]->setTextDefinition(tr("ф. 2. р. 100 (105) Операційний прибуток (збиток)"));
     pCoefficientRows[12]->setTextDefinition(tr("ф. 2. р. 220 (225) Чистий прибуток (збиток)"));
     pCoefficientRows[13]->setTextDefinition(tr("ф. 2. р. 260 Амортизація"));
-    pCoefficientRows[14]->setTextDefinition(tr("ф. 2. р. 070-090 Інтегральні витрати"));
+    pCoefficientRows[14]->setTextDefinition(tr("ф. 2. р. 070 - 090 Інтегральні витрати"));
 }

@@ -5,16 +5,16 @@ modDavidovaBelikov::modDavidovaBelikov(QWidget *parent) :
                   parent,
                   tr("qrc:/models/davidovabelikov"),
                   tr("Модель Давидової-Бєлікова"),
-                  tr("Z=8,38X1+X2+0,054X3+0,63Х4"))
+                  tr("Z = 8,38X<sub>1</sub> + X<sub>2</sub> + 0,054X<sub>3</sub> + 0,63Х<sub>4</sub>"))
 {
 }
 
 void modDavidovaBelikov::setRowsDefinitions()
 {
-    pCoefficientRows[0]->setTextDefinition(tr("(ф.1, р. 260+270-620-630)/ ф.1, р. 640 – відношення робочого капіталу до суми активів;"));
-    pCoefficientRows[1]->setTextDefinition(tr("ф.2, р. 220(225) / ф.1, р. 380– відношення чистого прибутку до суми власного капіталу;"));
-    pCoefficientRows[2]->setTextDefinition(tr("ф.2, р. 035 / ф.1, р. 640 – відношення чистого доходу до суми активів;"));
-    pCoefficientRows[3]->setTextDefinition(tr("ф.2, р. 220(225) / (ф.2, р. 070+080+090) – відношення чистого прибутку до інтегральних витрат."));
+    pCoefficientRows[0]->setTextDefinition(tr("(ф. 1. р. 260 + 270 - 620 - 630) / ф. 1. р. 640 – відношення робочого капіталу до суми активів"));
+    pCoefficientRows[1]->setTextDefinition(tr("ф. 2. р. 220 (225) / ф. 1. р. 380 – відношення чистого прибутку до суми власного капіталу"));
+    pCoefficientRows[2]->setTextDefinition(tr("ф. 2. р. 035 / ф. 1. р. 640 – відношення чистого доходу до суми активів"));
+    pCoefficientRows[3]->setTextDefinition(tr("ф. 2. р. 220 (225) / (ф. 2. р. 070 + 080 + 090) – відношення чистого прибутку до інтегральних витрат"));
 }
 
 void modDavidovaBelikov::calculate(EvgBasicModel *pInputData)

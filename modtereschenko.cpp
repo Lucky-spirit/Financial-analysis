@@ -5,18 +5,19 @@ modTereschenko::modTereschenko(QWidget *parent) :
                   parent,
                   tr("qrc:/models/tereschenko"),
                   tr("Модель Терещенко"),
-                  tr("Z=0,105Х1+1,567Х2+0,301Х3+1,375Х4+1,689Х5+0,168Х6-0,260"))
+                  tr("Z = 0,105Х<sub>1</sub> + 1,567Х<sub>2</sub> + 0,301Х<sub>3</sub> + "
+                     "1,375Х<sub>4</sub> + 1,689Х<sub>5</sub> + 0,168Х<sub>6</sub> - 0,260"))
 {
 }
 
 void modTereschenko::setRowsDefinitions()
 {
-    pCoefficientRows[0]->setTextDefinition(tr("ф.1, р. 260 / ф.1, р. 620 – коефіцієнт загальної ліквідності;"));
-    pCoefficientRows[1]->setTextDefinition(tr("ф.1, р. 380 / ф.1, р. 640 – відношення власного капіталу до суми активів;"));
-    pCoefficientRows[2]->setTextDefinition(tr("ф.2, р. 035 / ф.1, р. 640 – відношення чистого доходу до суми активів;"));
-    pCoefficientRows[3]->setTextDefinition(tr("(ф.2, р. 220(225)+260) / ф.2, р. 035 – коефіцієнт рентабельності операційного продажу за грошовим потоком;"));
-    pCoefficientRows[4]->setTextDefinition(tr("ф.2, р. 050(055) / ф.2, р. 035 – відношення валового прибутку до чистого доходу;"));
-    pCoefficientRows[5]->setTextDefinition(tr("ф.2, р. 220(225) / ф.1, р. 380 – відношення чистого прибутку підприємства до суми власного капіталу."));
+    pCoefficientRows[0]->setTextDefinition(tr("ф. 1. р. 260 / ф. 1. р. 620 – коефіцієнт загальної ліквідності"));
+    pCoefficientRows[1]->setTextDefinition(tr("ф. 1. р. 380 / ф. 1. р. 640 – відношення власного капіталу до суми активів"));
+    pCoefficientRows[2]->setTextDefinition(tr("ф. 2. р. 035 / ф. 1. р. 640 – відношення чистого доходу до суми активів"));
+    pCoefficientRows[3]->setTextDefinition(tr("(ф. 2. р. 220 (225) + ф. 2. р. 260) / ф. 2. р. 035 – коефіцієнт рентабельності операційного продажу за грошовим потоком"));
+    pCoefficientRows[4]->setTextDefinition(tr("ф. 2. р. 050 (055) / ф. 2. р. 035 – відношення валового прибутку до чистого доходу"));
+    pCoefficientRows[5]->setTextDefinition(tr("ф. 2. р. 220 (225) / ф. 1. р. 380 – відношення чистого прибутку підприємства до суми власного капіталу"));
 }
 
 void modTereschenko::calculate(EvgBasicModel *pInputData)

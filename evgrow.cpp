@@ -61,7 +61,8 @@ void EvgRow::setIdText(int newId)
 {
     QString foo;
     foo.setNum(newId);
-    foo.insert(0, "x");
+    foo.insert(0, "x<sub>");
+    foo.append("</sub>");
     pIdCoefficient->setText(foo);
 }
 

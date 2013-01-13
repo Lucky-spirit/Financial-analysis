@@ -5,14 +5,14 @@ modChupis::modChupis(QWidget *parent) :
                   parent,
                   tr("qrc:/models/chupis"),
                   tr("Модель Чупіса"),
-                  tr("Z =-1,3496-0,6183Х1+0,6867К2"))
+                  tr("Z = -1,3496 - 0,6183Х<sub>1</sub> + 0,6867X<sub>2</sub>"))
 {
 }
 
 void modChupis::setRowsDefinitions()
 {
-    pCoefficientRows[0]->setTextDefinition(tr("ф.1, р. 260 / ф.1, р. 620 – коефіцієнт загальної ліквідності;"));
-    pCoefficientRows[1]->setTextDefinition(tr("(ф.1, р. 480+620) / ф.1, р. 640 – коефіцієнт фінансової залежності."));
+    pCoefficientRows[0]->setTextDefinition(tr("ф. 1. р. 260 / ф. 1. р. 620 – коефіцієнт загальної ліквідності"));
+    pCoefficientRows[1]->setTextDefinition(tr("(ф. 1. р. 480 + ф. 1. р. 620) / ф. 1. р. 640 – коефіцієнт фінансової залежності"));
 }
 
 void modChupis::calculate(EvgBasicModel *pInputData)

@@ -17,11 +17,11 @@ float modBiver::getResult() const
 
 void modBiver::setRowsDefinitions()
 {
-    pCoefficientRows[0]->setTextDefinition(tr("– коефіцієнт Бівера;"));
-    pCoefficientRows[1]->setTextDefinition(tr("– рентабельність активів;"));
-    pCoefficientRows[2]->setTextDefinition(tr("– коефіцієнт фінансового левериджу;"));
-    pCoefficientRows[3]->setTextDefinition(tr("– коефіцієнт покриття активів обіговим капіталом;"));
-    pCoefficientRows[4]->setTextDefinition(tr("– коефіцієнт загальної ліквідності."));
+    pCoefficientRows[0]->setTextDefinition(tr("– коефіцієнт Бівера"));
+    pCoefficientRows[1]->setTextDefinition(tr("– рентабельність активів"));
+    pCoefficientRows[2]->setTextDefinition(tr("– коефіцієнт фінансового левериджу"));
+    pCoefficientRows[3]->setTextDefinition(tr("– коефіцієнт покриття активів обіговим капіталом"));
+    pCoefficientRows[4]->setTextDefinition(tr("– коефіцієнт загальної ліквідності"));
 }
 
 void modBiver::setResultValue()

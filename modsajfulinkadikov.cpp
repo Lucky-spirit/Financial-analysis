@@ -5,17 +5,18 @@ modSajfulinKadikov::modSajfulinKadikov(QWidget *parent) :
                   parent,
                   tr("qrc:/models/sajfulinkadikov"),
                   tr("Модель Сайфулліна і Кадикова"),
-                  tr("Z=2Х1+0,1Х2+0,08Х3+0,45Х4+Х5"))
+                  tr("Z = 2Х<sub>1</sub> + 0,1Х<sub>2</sub> + 0,08Х<sub>3</sub> + 0,45Х<sub>4</sub> + Х<sub>5</sub>"))
 {
 }
 
 void modSajfulinKadikov::setRowsDefinitions()
 {
-    pCoefficientRows[0]->setTextDefinition(tr("(ф.1, р. 380-080)/ ф.1, р. 260 – коефіцієнт забезпеченості власними засобами;"));
-    pCoefficientRows[1]->setTextDefinition(tr("ф.1, р. 260 / ф.1, р. 620 – коефіцієнт поточної ліквідності;"));
-    pCoefficientRows[2]->setTextDefinition(tr("ф.2, р. 035 / ф.1, р. 640 – відношення чистого доходу до суми активів;"));
-    pCoefficientRows[3]->setTextDefinition(tr("ф.2, р. 050(055) / ф.2, р. 035 – коефіцієнт менеджменту, який характеризується відношенням прибутку від реалізації до величини виручки від реалізації;"));
-    pCoefficientRows[4]->setTextDefinition(tr("ф.2, р. 050(055) / ф.1, р. 380 – рентабельність власного капіталу."));
+    pCoefficientRows[0]->setTextDefinition(tr("(ф. 1. р. 380 - 080) / ф. 1. р. 260 – коефіцієнт забезпеченості власними засобами"));
+    pCoefficientRows[1]->setTextDefinition(tr("ф. 1. р. 260 / ф. 1. р. 620 – коефіцієнт поточної ліквідності"));
+    pCoefficientRows[2]->setTextDefinition(tr("ф. 2. р. 035 / ф. 1. р. 640 – відношення чистого доходу до суми активів"));
+    pCoefficientRows[3]->setTextDefinition(tr("ф. 2. р. 050 (055) / ф. 2. р. 035 – коефіцієнт менеджменту, "
+                                              "який характеризується відношенням прибутку від реалізації до величини виручки від реалізації"));
+    pCoefficientRows[4]->setTextDefinition(tr("ф. 2. р. 050 (055) / ф. 1. р. 380 – рентабельність власного капіталу"));
 }
 
 void modSajfulinKadikov::calculate(EvgBasicModel *pInputData)
